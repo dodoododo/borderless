@@ -1,0 +1,335 @@
+{
+  "search_metadata": {
+    "id": "6a7965b902706a6fb9b6ebd5",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/OV3PxnTDrYviitnnFRU3jw/6a7965b902706a6fb9b6ebd5.json",
+    "created_at": "2026-08-10 05:46:33 UTC",
+    "processed_at": "2026-08-10 05:46:33 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhpiEgoyMDI2LTA5LTE4IiAKA1NHThIKMjAyNi0wOS0xOBoDVEZVKgIzVTIEMzkwNCIgCgNURlUSCjIwMjYtMDktMTkaA0lTVCoCM1UyBDM4MjdqBwgBEgNTR05yBwgBEgNJU1QaHhIKMjAyNi0wOS0yNWoHCAESA0lTVHIHCAESA1NHTkABSAFwAZgBAQ&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/OV3PxnTDrYviitnnFRU3jw/6a7965b902706a6fb9b6ebd5.html",
+    "prettify_html_file": "https://serpapi.com/searches/OV3PxnTDrYviitnnFRU3jw/6a7965b902706a6fb9b6ebd5.prettify",
+    "total_time_taken": 2.54
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "type": "1",
+    "departure_id": "SGN",
+    "arrival_id": "IST",
+    "outbound_date": "2026-09-18",
+    "return_date": "2026-09-25",
+    "travel_class": 1,
+    "departure_token": "WyJDalJJVTJ0YVZUQmhkMloyV1dOQlVFZ3pWVkZDUnkwdExTMHRMVzlyWjJveU5TMXVNVUZCUVVGQlIzQTFXVkJ6VG5wTllXZEJFZzB6VlRNNU1EUjhNMVV6T0RJM0dnc0l2dVlERUFJYUExVlRSRGdjY0w3bUF3PT0iLFtbIlNHTiIsIjIwMjYtMDktMTgiLCJURlUiLG51bGwsIjNVIiwiMzkwNCJdLFsiVEZVIiwiMjAyNi0wOS0xOSIsIklTVCIsbnVsbCwiM1UiLCIzODI3Il1dXQ==",
+    "currency": "USD"
+  },
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-25 15:40"
+          },
+          "arrival_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-26 05:20"
+          },
+          "duration": 520,
+          "airplane": "Airbus A330",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 3828",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 408 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-26 19:35"
+          },
+          "arrival_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-26 22:20"
+          },
+          "duration": 225,
+          "airplane": "Airbus A321",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 3903",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Carbon emissions estimate: 212 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 855,
+          "name": "Chengdu Tianfu International",
+          "id": "TFU"
+        }
+      ],
+      "total_duration": 1600,
+      "carbon_emissions": {
+        "this_flight": 622000,
+        "typical_for_this_route": 593000,
+        "difference_percent": 5
+      },
+      "price": 623,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+      "booking_token": "WyJDalJJZVZOSVFYWXpTbXBrTTBWQlRHdDZNV2RDUnkwdExTMHRMUzB0TFhCbVltMXNORUZCUVVGQlIzQTFXbUp2UzNWVU9EQkJFZzB6VlRNNE1qaDhNMVV6T1RBekdnc0l2dVlERUFJYUExVlRSRGdjY0w3bUF3PT0iLFtbIlNHTiIsIjIwMjYtMDktMTgiLCJURlUiLG51bGwsIjNVIiwiMzkwNCJdLFsiVEZVIiwiMjAyNi0wOS0xOSIsIklTVCIsbnVsbCwiM1UiLCIzODI3Il1dLFtbIklTVCIsIjIwMjYtMDktMjUiLCJURlUiLG51bGwsIjNVIiwiMzgyOCJdLFsiVEZVIiwiMjAyNi0wOS0yNiIsIlNHTiIsbnVsbCwiM1UiLCIzOTAzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-25 15:40"
+          },
+          "arrival_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-26 05:20"
+          },
+          "duration": 520,
+          "airplane": "Airbus A330",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 3828",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 408 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-26 08:00"
+          },
+          "arrival_airport": {
+            "name": "Guangzhou Baiyun International Airport",
+            "id": "CAN",
+            "time": "2026-09-26 10:25"
+          },
+          "duration": 145,
+          "airplane": "Airbus A330",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 6701",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 114 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Guangzhou Baiyun International Airport",
+            "id": "CAN",
+            "time": "2026-09-26 12:40"
+          },
+          "arrival_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-26 14:40"
+          },
+          "duration": 180,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "China Southern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+          "travel_class": "Economy",
+          "flight_number": "CZ 373",
+          "ticket_also_sold_by": [
+            "Vietnam Airlines"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 134 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 160,
+          "name": "Chengdu Tianfu International",
+          "id": "TFU"
+        },
+        {
+          "duration": 135,
+          "name": "Guangzhou Baiyun International Airport",
+          "id": "CAN"
+        }
+      ],
+      "total_duration": 1140,
+      "carbon_emissions": {
+        "this_flight": 658000,
+        "typical_for_this_route": 593000,
+        "difference_percent": 11
+      },
+      "price": 1060,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJZVZOSVFYWXpTbXBrTTBWQlRHdDZNV2RDUnkwdExTMHRMUzB0TFhCbVltMXNORUZCUVVGQlIzQTFXbUp2UzNWVU9EQkJFaE16VlRNNE1qaDhNMVUyTnpBeGZFTmFNemN6R2dzSWo3d0dFQUlhQTFWVFJEZ2NjSSs4Qmc9PSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIlRGVSIsbnVsbCwiM1UiLCIzOTA0Il0sWyJURlUiLCIyMDI2LTA5LTE5IiwiSVNUIixudWxsLCIzVSIsIjM4MjciXV0sW1siSVNUIiwiMjAyNi0wOS0yNSIsIlRGVSIsbnVsbCwiM1UiLCIzODI4Il0sWyJURlUiLCIyMDI2LTA5LTI2IiwiQ0FOIixudWxsLCIzVSIsIjY3MDEiXSxbIkNBTiIsIjIwMjYtMDktMjYiLCJTR04iLG51bGwsIkNaIiwiMzczIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-25 14:20"
+          },
+          "arrival_airport": {
+            "name": "Guangzhou Baiyun International Airport",
+            "id": "CAN",
+            "time": "2026-09-26 05:05"
+          },
+          "duration": 585,
+          "airplane": "Boeing 787",
+          "airline": "China Southern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+          "travel_class": "Economy",
+          "flight_number": "CZ 8066",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 467 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Guangzhou Baiyun International Airport",
+            "id": "CAN",
+            "time": "2026-09-26 08:50"
+          },
+          "arrival_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-26 10:40"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "China Southern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+          "travel_class": "Economy",
+          "flight_number": "CZ 8159",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 131 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 225,
+          "name": "Guangzhou Baiyun International Airport",
+          "id": "CAN"
+        }
+      ],
+      "total_duration": 980,
+      "carbon_emissions": {
+        "this_flight": 598000,
+        "typical_for_this_route": 593000,
+        "difference_percent": 1
+      },
+      "price": 2775,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+      "booking_token": "WyJDalJJZVZOSVFYWXpTbXBrTTBWQlRHdDZNV2RDUnkwdExTMHRMUzB0TFhCbVltMXNORUZCUVVGQlIzQTFXbUp2UzNWVU9EQkJFZzFEV2pnd05qWjhRMW80TVRVNUdnc0kzdmNRRUFJYUExVlRSRGdjY043M0VBPT0iLFtbIlNHTiIsIjIwMjYtMDktMTgiLCJURlUiLG51bGwsIjNVIiwiMzkwNCJdLFsiVEZVIiwiMjAyNi0wOS0xOSIsIklTVCIsbnVsbCwiM1UiLCIzODI3Il1dLFtbIklTVCIsIjIwMjYtMDktMjUiLCJDQU4iLG51bGwsIkNaIiwiODA2NiJdLFsiQ0FOIiwiMjAyNi0wOS0yNiIsIlNHTiIsbnVsbCwiQ1oiLCI4MTU5Il1dXQ=="
+    }
+  ],
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "SGN",
+            "name": "Tan Son Nhat International Airport"
+          },
+          "city": "Ho Chi Minh City",
+          "country": "Vietnam",
+          "country_code": "VN",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAOCcUPynkZ8t86Ig-09uyTyQNYxwjy0W-RChnrvjZK2pg-tiukuujhbLg8Wq0nYc6x4RFHQ3x03lLA",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXVpebF31lQYMejuvMIypWNPE1ufTwJOb_dxVK9AX8XLlF4a4KLg6O-6353PiJkncKUgSBrJTQwkY3cFiPV-Vzkm1gBlcWDuSY3obrzk"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "IST",
+            "name": "Istanbul Airport"
+          },
+          "city": "Istanbul",
+          "country": "Türkiye",
+          "country_code": "TR",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTCxBjNwAoLrTOKowDJwZyOgqpPqpGuPY1umCd0ey6x2mma7s1rFxR63gC-wiSQxRp8LzzpwbK_vjhTOg",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRiCjiMuHyH5raqgVAMRbLlsvhbz3F-vRqjoeVsLl90nMoNQwTytaomGjUfudBUtd2MtI9VLBNX1nuQ2S3W5ilNuO2DRBxUVEgdJX-XYQQ"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "IST",
+            "name": "Istanbul Airport"
+          },
+          "city": "Istanbul",
+          "country": "Türkiye",
+          "country_code": "TR",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTCxBjNwAoLrTOKowDJwZyOgqpPqpGuPY1umCd0ey6x2mma7s1rFxR63gC-wiSQxRp8LzzpwbK_vjhTOg",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRiCjiMuHyH5raqgVAMRbLlsvhbz3F-vRqjoeVsLl90nMoNQwTytaomGjUfudBUtd2MtI9VLBNX1nuQ2S3W5ilNuO2DRBxUVEgdJX-XYQQ"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "SGN",
+            "name": "Tan Son Nhat International Airport"
+          },
+          "city": "Ho Chi Minh City",
+          "country": "Vietnam",
+          "country_code": "VN",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAOCcUPynkZ8t86Ig-09uyTyQNYxwjy0W-RChnrvjZK2pg-tiukuujhbLg8Wq0nYc6x4RFHQ3x03lLA",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXVpebF31lQYMejuvMIypWNPE1ufTwJOb_dxVK9AX8XLlF4a4KLg6O-6353PiJkncKUgSBrJTQwkY3cFiPV-Vzkm1gBlcWDuSY3obrzk"
+        }
+      ]
+    }
+  ]
+}

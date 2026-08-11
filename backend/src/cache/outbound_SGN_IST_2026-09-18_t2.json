@@ -1,0 +1,1183 @@
+{
+  "search_metadata": {
+    "id": "6a7968401dcfe2e7800cc2bd",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/IJ1VfgeUZq5NcMwak02ZgQ/6a7968401dcfe2e7800cc2bd.json",
+    "created_at": "2026-08-10 05:57:20 UTC",
+    "processed_at": "2026-08-10 05:57:20 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI2LTA5LTE4agcIARIDU0dOcgcIARIDSVNUQAFIAXABmAEC&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/IJ1VfgeUZq5NcMwak02ZgQ/6a7968401dcfe2e7800cc2bd.html",
+    "prettify_html_file": "https://serpapi.com/searches/IJ1VfgeUZq5NcMwak02ZgQ/6a7968401dcfe2e7800cc2bd.prettify",
+    "total_time_taken": 3.51
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "type": "2",
+    "departure_id": "SGN",
+    "arrival_id": "IST",
+    "outbound_date": "2026-09-18",
+    "travel_class": 1,
+    "currency": "USD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 07:50"
+          },
+          "arrival_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-18 12:25"
+          },
+          "duration": 215,
+          "airplane": "Airbus A321",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 3904",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Carbon emissions estimate: 210 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Chengdu Tianfu International",
+            "id": "TFU",
+            "time": "2026-09-19 01:35"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 06:30"
+          },
+          "duration": 595,
+          "airplane": "Airbus A330",
+          "airline": "Sichuan Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+          "travel_class": "Economy",
+          "flight_number": "3U 3827",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 407 kg"
+          ],
+          "overnight": true,
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 790,
+          "name": "Chengdu Tianfu International",
+          "id": "TFU"
+        }
+      ],
+      "total_duration": 1600,
+      "carbon_emissions": {
+        "this_flight": 618000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 6
+      },
+      "price": 375,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/3U.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZzB6VlRNNU1EUjhNMVV6T0RJM0dnc0k2S1FDRUFJYUExVlRSRGdjY09pa0FnPT0iLFtbIlNHTiIsIjIwMjYtMDktMTgiLCJURlUiLG51bGwsIjNVIiwiMzkwNCJdLFsiVEZVIiwiMjAyNi0wOS0xOSIsIklTVCIsbnVsbCwiM1UiLCIzODI3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 20:10"
+          },
+          "arrival_airport": {
+            "name": "Suvarnabhumi Airport",
+            "id": "BKK",
+            "time": "2026-09-18 21:35"
+          },
+          "duration": 85,
+          "airplane": "Airbus A320",
+          "airline": "THAI",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+          "travel_class": "Economy",
+          "flight_number": "TG 557",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 98 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Suvarnabhumi Airport",
+            "id": "BKK",
+            "time": "2026-09-18 23:50"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 05:35"
+          },
+          "duration": 585,
+          "airplane": "Airbus A350",
+          "airline": "THAI",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+          "travel_class": "Economy",
+          "flight_number": "TG 900",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 492 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 135,
+          "name": "Suvarnabhumi Airport",
+          "id": "BKK"
+        }
+      ],
+      "total_duration": 805,
+      "carbon_emissions": {
+        "this_flight": 591000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 1
+      },
+      "price": 490,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZ3RVUnpVMU4zeFVSemt3TUJvTENONytBaEFDR2dOVlUwUTRISERlL2dJPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIkJLSyIsbnVsbCwiVEciLCI1NTciXSxbIkJLSyIsIjIwMjYtMDktMTgiLCJJU1QiLG51bGwsIlRHIiwiOTAwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 20:00"
+          },
+          "arrival_airport": {
+            "name": "Hamad International Airport",
+            "id": "DOH",
+            "time": "2026-09-18 23:15"
+          },
+          "duration": 435,
+          "airplane": "Boeing 777",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 971",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 449 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hamad International Airport",
+            "id": "DOH",
+            "time": "2026-09-19 07:35"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 11:55"
+          },
+          "duration": 260,
+          "airplane": "Boeing 777",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 239",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 252 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 500,
+          "name": "Hamad International Airport",
+          "id": "DOH"
+        }
+      ],
+      "total_duration": 1195,
+      "carbon_emissions": {
+        "this_flight": 702000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 20
+      },
+      "price": 623,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZ3RSVWprM01YeFJVakl6T1JvTENJem1BeEFDR2dOVlUwUTRISENNNWdNPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIkRPSCIsbnVsbCwiUVIiLCI5NzEiXSxbIkRPSCIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIlFSIiwiMjM5Il1dXQ=="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 11:00"
+          },
+          "arrival_airport": {
+            "name": "Kuala Lumpur International Airport",
+            "id": "KUL",
+            "time": "2026-09-18 13:55"
+          },
+          "duration": 115,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Malaysia Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+          "travel_class": "Economy",
+          "flight_number": "MH 751",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Free Wi-Fi",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 91 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Kuala Lumpur International Airport",
+            "id": "KUL",
+            "time": "2026-09-18 21:55"
+          },
+          "arrival_airport": {
+            "name": "Zayed International Airport",
+            "id": "AUH",
+            "time": "2026-09-19 00:50"
+          },
+          "duration": 415,
+          "airplane": "Boeing 787-10",
+          "airline": "Etihad",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+          "travel_class": "Economy",
+          "flight_number": "EY 487",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 304 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Zayed International Airport",
+            "id": "AUH",
+            "time": "2026-09-19 08:40"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 12:35"
+          },
+          "duration": 295,
+          "airplane": "Airbus A320",
+          "airline": "Etihad",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+          "travel_class": "Economy",
+          "flight_number": "EY 541",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 272 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 480,
+          "name": "Kuala Lumpur International Airport",
+          "id": "KUL"
+        },
+        {
+          "duration": 470,
+          "name": "Zayed International Airport",
+          "id": "AUH"
+        }
+      ],
+      "total_duration": 1775,
+      "carbon_emissions": {
+        "this_flight": 669000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 14
+      },
+      "price": 449,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaEZOU0RjMU1YeEZXVFE0TjN4RldUVTBNUm9MQ0pYZUFoQUNHZ05WVTBRNEhIQ1YzZ0k9IixbWyJTR04iLCIyMDI2LTA5LTE4IiwiS1VMIixudWxsLCJNSCIsIjc1MSJdLFsiS1VMIiwiMjAyNi0wOS0xOCIsIkFVSCIsbnVsbCwiRVkiLCI0ODciXSxbIkFVSCIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIkVZIiwiNTQxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 06:20"
+          },
+          "arrival_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 10:50"
+          },
+          "duration": 210,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2840",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 14:55"
+          },
+          "arrival_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-18 17:20"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2885",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Carbon emissions estimate: 110 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 07:00"
+          },
+          "duration": 630,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 5025",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 527 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 245,
+          "name": "Nanjing Lukou International Airport",
+          "id": "NKG"
+        },
+        {
+          "duration": 490,
+          "name": "Xi'an Xianyang International Airport",
+          "id": "XIY"
+        }
+      ],
+      "total_duration": 1720,
+      "carbon_emissions": {
+        "this_flight": 846000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 45
+      },
+      "price": 463,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaFJOVlRJNE5EQjhUVlV5T0RnMWZFMVZOVEF5TlJvTENMN3BBaEFDR2dOVlUwUTRISEMrNlFJPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIk5LRyIsbnVsbCwiTVUiLCIyODQwIl0sWyJOS0ciLCIyMDI2LTA5LTE4IiwiWElZIixudWxsLCJNVSIsIjI4ODUiXSxbIlhJWSIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIk1VIiwiNTAyNSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 06:20"
+          },
+          "arrival_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 10:50"
+          },
+          "duration": 210,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2840",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 21:20"
+          },
+          "arrival_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-18 23:35"
+          },
+          "duration": 135,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 792",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 122 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 07:00"
+          },
+          "duration": 630,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 5025",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 527 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 630,
+          "name": "Nanjing Lukou International Airport",
+          "id": "NKG"
+        },
+        {
+          "duration": 115,
+          "name": "Xi'an Xianyang International Airport",
+          "id": "XIY"
+        }
+      ],
+      "total_duration": 1720,
+      "carbon_emissions": {
+        "this_flight": 858000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 47
+      },
+      "price": 463,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaE5OVlRJNE5EQjhUVlUzT1RKOFRWVTFNREkxR2dzSXZ1a0NFQUlhQTFWVFJEZ2NjTDdwQWc9PSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIk5LRyIsbnVsbCwiTVUiLCIyODQwIl0sWyJOS0ciLCIyMDI2LTA5LTE4IiwiWElZIixudWxsLCJNVSIsIjc5MiJdLFsiWElZIiwiMjAyNi0wOS0xOSIsIklTVCIsbnVsbCwiTVUiLCI1MDI1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 06:20"
+          },
+          "arrival_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 10:50"
+          },
+          "duration": 210,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2840",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 12:55"
+          },
+          "arrival_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-18 15:05"
+          },
+          "duration": 130,
+          "airplane": "Airbus A321",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2807",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 119 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 07:00"
+          },
+          "duration": 630,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 5025",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 527 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 125,
+          "name": "Nanjing Lukou International Airport",
+          "id": "NKG"
+        },
+        {
+          "duration": 625,
+          "name": "Xi'an Xianyang International Airport",
+          "id": "XIY"
+        }
+      ],
+      "total_duration": 1720,
+      "carbon_emissions": {
+        "this_flight": 856000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 46
+      },
+      "price": 463,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaFJOVlRJNE5EQjhUVlV5T0RBM2ZFMVZOVEF5TlJvTENMN3BBaEFDR2dOVlUwUTRISEMrNlFJPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIk5LRyIsbnVsbCwiTVUiLCIyODQwIl0sWyJOS0ciLCIyMDI2LTA5LTE4IiwiWElZIixudWxsLCJNVSIsIjI4MDciXSxbIlhJWSIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIk1VIiwiNTAyNSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 06:20"
+          },
+          "arrival_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 10:50"
+          },
+          "duration": 210,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2840",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 19:25"
+          },
+          "arrival_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-18 21:35"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2767",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 91 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 07:00"
+          },
+          "duration": 630,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 5025",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 527 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 515,
+          "name": "Nanjing Lukou International Airport",
+          "id": "NKG"
+        },
+        {
+          "duration": 235,
+          "name": "Xi'an Xianyang International Airport",
+          "id": "XIY"
+        }
+      ],
+      "total_duration": 1720,
+      "carbon_emissions": {
+        "this_flight": 827000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 41
+      },
+      "price": 463,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaFJOVlRJNE5EQjhUVlV5TnpZM2ZFMVZOVEF5TlJvTENMN3BBaEFDR2dOVlUwUTRISEMrNlFJPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIk5LRyIsbnVsbCwiTVUiLCIyODQwIl0sWyJOS0ciLCIyMDI2LTA5LTE4IiwiWElZIixudWxsLCJNVSIsIjI3NjciXSxbIlhJWSIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIk1VIiwiNTAyNSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 06:20"
+          },
+          "arrival_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 10:50"
+          },
+          "duration": 210,
+          "airplane": "Airbus A320neo",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2840",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Nanjing Lukou International Airport",
+            "id": "NKG",
+            "time": "2026-09-18 17:00"
+          },
+          "arrival_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-18 19:00"
+          },
+          "duration": 120,
+          "airplane": "Airbus A319",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 2895",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 123 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Xi'an Xianyang International Airport",
+            "id": "XIY",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 07:00"
+          },
+          "duration": 630,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 5025",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 527 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 370,
+          "name": "Nanjing Lukou International Airport",
+          "id": "NKG"
+        },
+        {
+          "duration": 390,
+          "name": "Xi'an Xianyang International Airport",
+          "id": "XIY"
+        }
+      ],
+      "total_duration": 1720,
+      "carbon_emissions": {
+        "this_flight": 859000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 47
+      },
+      "price": 463,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaFJOVlRJNE5EQjhUVlV5T0RrMWZFMVZOVEF5TlJvTENMN3BBaEFDR2dOVlUwUTRISEMrNlFJPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIk5LRyIsbnVsbCwiTVUiLCIyODQwIl0sWyJOS0ciLCIyMDI2LTA5LTE4IiwiWElZIixudWxsLCJNVSIsIjI4OTUiXSxbIlhJWSIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIk1VIiwiNTAyNSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 02:35"
+          },
+          "arrival_airport": {
+            "name": "Shanghai Pudong International Airport",
+            "id": "PVG",
+            "time": "2026-09-18 07:55"
+          },
+          "duration": 260,
+          "airplane": "Airbus A321",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 282",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 253 kg"
+          ],
+          "overnight": true,
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Shanghai Pudong International Airport",
+            "id": "PVG",
+            "time": "2026-09-19 01:20"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 08:10"
+          },
+          "duration": 710,
+          "airplane": "Airbus A330",
+          "airline": "China Eastern",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+          "travel_class": "Economy",
+          "flight_number": "MU 703",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 452 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 1045,
+          "name": "Shanghai Pudong International Airport",
+          "id": "PVG"
+        }
+      ],
+      "total_duration": 2015,
+      "carbon_emissions": {
+        "this_flight": 707000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 21
+      },
+      "price": 708,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MU.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZ3ROVlRJNE1ueE5WVGN3TXhvTENNcW9CQkFDR2dOVlUwUTRISERLcUFRPSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIlBWRyIsbnVsbCwiTVUiLCIyODIiXSxbIlBWRyIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIk1VIiwiNzAzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 16:50"
+          },
+          "arrival_airport": {
+            "name": "Suvarnabhumi Airport",
+            "id": "BKK",
+            "time": "2026-09-18 18:30"
+          },
+          "duration": 100,
+          "airplane": "Airbus A321",
+          "airline": "Vietnam Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/VN.png",
+          "travel_class": "Economy",
+          "flight_number": "VN 607",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 85 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Suvarnabhumi Airport",
+            "id": "BKK",
+            "time": "2026-09-18 21:00"
+          },
+          "arrival_airport": {
+            "name": "Zayed International Airport",
+            "id": "AUH",
+            "time": "2026-09-19 00:30"
+          },
+          "duration": 390,
+          "airplane": "Airbus A350",
+          "airline": "Etihad",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+          "travel_class": "Economy",
+          "flight_number": "EY 407",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 310 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Zayed International Airport",
+            "id": "AUH",
+            "time": "2026-09-19 01:30"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 05:25"
+          },
+          "duration": 295,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 869",
+          "ticket_also_sold_by": [
+            "Etihad"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 240 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 150,
+          "name": "Suvarnabhumi Airport",
+          "id": "BKK"
+        },
+        {
+          "duration": 60,
+          "name": "Zayed International Airport",
+          "id": "AUH"
+        }
+      ],
+      "total_duration": 995,
+      "carbon_emissions": {
+        "this_flight": 637000,
+        "typical_for_this_route": 585000,
+        "difference_percent": 9
+      },
+      "price": 949,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFaEZXVGpZd04zeEZXVFF3TjN4VVN6ZzJPUm9MQ08za0JSQUNHZ05WVTBRNEhIRHQ1QVU9IixbWyJTR04iLCIyMDI2LTA5LTE4IiwiQktLIixudWxsLCJWTiIsIjYwNyJdLFsiQktLIiwiMjAyNi0wOS0xOCIsIkFVSCIsbnVsbCwiRVkiLCI0MDciXSxbIkFVSCIsIjIwMjYtMDktMTkiLCJJU1QiLG51bGwsIlRLIiwiODY5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 22:05"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 04:50"
+          },
+          "duration": 645,
+          "airplane": "Airbus A350",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 163",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 499 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 645,
+      "carbon_emissions": {
+        "this_flight": 499000,
+        "typical_for_this_route": 585000,
+        "difference_percent": -15
+      },
+      "price": 1116,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZ1ZVU3pFMk14b0xDUERuQmhBQ0dnTlZVMFE0SEhEdzV3WT0iLFtbIlNHTiIsIjIwMjYtMDktMTgiLCJJU1QiLG51bGwsIlRLIiwiMTYzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Tan Son Nhat International Airport",
+            "id": "SGN",
+            "time": "2026-09-18 16:40"
+          },
+          "arrival_airport": {
+            "name": "Kuala Lumpur International Airport",
+            "id": "KUL",
+            "time": "2026-09-18 19:40"
+          },
+          "duration": 120,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Malaysia Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+          "travel_class": "Economy",
+          "flight_number": "MH 759",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Free Wi-Fi",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 91 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Kuala Lumpur International Airport",
+            "id": "KUL",
+            "time": "2026-09-18 23:25"
+          },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-09-19 05:15"
+          },
+          "duration": 650,
+          "airplane": "Airbus A350",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 61",
+          "ticket_also_sold_by": [
+            "Malaysia Airlines"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 482 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 225,
+          "name": "Kuala Lumpur International Airport",
+          "id": "KUL"
+        }
+      ],
+      "total_duration": 995,
+      "carbon_emissions": {
+        "this_flight": 574000,
+        "typical_for_this_route": 585000,
+        "difference_percent": -2
+      },
+      "price": 1320,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJU0ZoUFFVWkxNVE5DVDAxQlVuRjZPRUZDUnkwdExTMHRMUzB0TFc5NVlYUXhNVUZCUVVGQlIzQTFZVVZGU0ZaMVVWbEJFZ3BOU0RjMU9YeFVTell4R2dzSWc0Y0lFQUlhQTFWVFJEZ2NjSU9IQ0E9PSIsW1siU0dOIiwiMjAyNi0wOS0xOCIsIktVTCIsbnVsbCwiTUgiLCI3NTkiXSxbIktVTCIsIjIwMjYtMDktMTgiLCJJU1QiLG51bGwsIlRLIiwiNjEiXV1d"
+    }
+  ],
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "SGN",
+            "name": "Tan Son Nhat International Airport"
+          },
+          "city": "Ho Chi Minh City",
+          "country": "Vietnam",
+          "country_code": "VN",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAOCcUPynkZ8t86Ig-09uyTyQNYxwjy0W-RChnrvjZK2pg-tiukuujhbLg8Wq0nYc6x4RFHQ3x03lLA",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXVpebF31lQYMejuvMIypWNPE1ufTwJOb_dxVK9AX8XLlF4a4KLg6O-6353PiJkncKUgSBrJTQwkY3cFiPV-Vzkm1gBlcWDuSY3obrzk"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "IST",
+            "name": "Istanbul Airport"
+          },
+          "city": "Istanbul",
+          "country": "Türkiye",
+          "country_code": "TR",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTCxBjNwAoLrTOKowDJwZyOgqpPqpGuPY1umCd0ey6x2mma7s1rFxR63gC-wiSQxRp8LzzpwbK_vjhTOg",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRiCjiMuHyH5raqgVAMRbLlsvhbz3F-vRqjoeVsLl90nMoNQwTytaomGjUfudBUtd2MtI9VLBNX1nuQ2S3W5ilNuO2DRBxUVEgdJX-XYQQ"
+        }
+      ]
+    }
+  ]
+}

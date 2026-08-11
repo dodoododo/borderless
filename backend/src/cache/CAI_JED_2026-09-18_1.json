@@ -1,0 +1,1668 @@
+{
+  "search_metadata": {
+    "id": "6a79576d9a1f2c9b62da0412",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/NdpCtfeg9SlBVJ-j_DiSeA/6a79576d9a1f2c9b62da0412.json",
+    "created_at": "2026-08-10 04:45:33 UTC",
+    "processed_at": "2026-08-10 04:45:33 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI2LTA5LTE4agcIARIDQ0FJcgcIARIDSkVEGh4SCjIwMjYtMDktMjVqBwgBEgNKRURyBwgBEgNDQUlAAUgBcAGYAQE&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/NdpCtfeg9SlBVJ-j_DiSeA/6a79576d9a1f2c9b62da0412.html",
+    "prettify_html_file": "https://serpapi.com/searches/NdpCtfeg9SlBVJ-j_DiSeA/6a79576d9a1f2c9b62da0412.prettify",
+    "total_time_taken": 5.48
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "departure_id": "CAI",
+    "arrival_id": "JED",
+    "outbound_date": "2026-09-18",
+    "return_date": "2026-09-25",
+    "travel_class": 1,
+    "currency": "USD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 10:20"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 12:45"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 584",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 195,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVNE5Cb0xDUEtYQVJBQ0dnTlZVMFE0SEhEeWx3RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTg0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 11:45"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 14:00"
+          },
+          "duration": 135,
+          "airplane": "Airbus A320",
+          "airline": "flyadeal",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+          "travel_class": "Economy",
+          "flight_number": "F3 756",
+          "ticket_also_sold_by": [
+            "Saudia"
+          ],
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 108 kg"
+          ]
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 109000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 0
+      },
+      "price": 200,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZHTXpjMU5ob0xDS0NjQVJBQ0dnTlZVMFE0SEhDZ25BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIkYzIiwiNzU2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 05:55"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 08:10"
+          },
+          "duration": 135,
+          "airplane": "Airbus A320",
+          "airline": "Air Arabia Egypt",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/E5.png",
+          "travel_class": "Economy",
+          "flight_number": "E5 327",
+          "extensions": [
+            "Carbon emissions estimate: 116 kg"
+          ]
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 116000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 6
+      },
+      "price": 207,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/E5.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZGTlRNeU54b0xDTmFoQVJBQ0dnTlZVMFE0SEhEV29RRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIkU1IiwiMzI3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 04:25"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 06:35"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 308",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 209,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNd09Cb0xDSitqQVJBQ0dnTlZVMFE0SEhDZm93RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzA4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 15:20"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 17:30"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 671",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 117 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 117000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 7
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZM01Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjcxIl1dXQ=="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 01:15"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 03:40"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 568",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 195,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVMk9Cb0xDUEtYQVJBQ0dnTlZVMFE0SEhEeWx3RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTY4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 09:25"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 11:50"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 566",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 195,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVMk5ob0xDUEtYQVJBQ0dnTlZVMFE0SEhEeWx3RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTY2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 23:25"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-19 01:50"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 590",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 195,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVNU1Cb0xDUEtYQVJBQ0dnTlZVMFE0SEhEeWx3RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTkwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 00:20"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 02:30"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "flyadeal",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+          "travel_class": "Economy",
+          "flight_number": "F3 764",
+          "ticket_also_sold_by": [
+            "Saudia"
+          ],
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 108 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 109000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 0
+      },
+      "price": 200,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZHTXpjMk5Cb0xDS0NjQVJBQ0dnTlZVMFE0SEhDZ25BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIkYzIiwiNzY0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 09:45"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 12:00"
+          },
+          "duration": 135,
+          "airplane": "Airbus A320",
+          "airline": "flyadeal",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+          "travel_class": "Economy",
+          "flight_number": "F3 754",
+          "ticket_also_sold_by": [
+            "Saudia"
+          ],
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 108 kg"
+          ]
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 109000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 0
+      },
+      "price": 200,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZHTXpjMU5Cb0xDS0NjQVJBQ0dnTlZVMFE0SEhDZ25BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIkYzIiwiNzU0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 21:45"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 23:55"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "flyadeal",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+          "travel_class": "Economy",
+          "flight_number": "F3 762",
+          "ticket_also_sold_by": [
+            "Saudia"
+          ],
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 108 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 109000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 0
+      },
+      "price": 200,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F3.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZHTXpjMk1ob0xDS0NjQVJBQ0dnTlZVMFE0SEhDZ25BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIkYzIiwiNzYyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 18:10"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 20:35"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 578",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 206,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVM09Cb0xDSitnQVJBQ0dnTlZVMFE0SEhDZm9BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTc4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 19:05"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 21:30"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 570",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 206,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVM01Cb0xDSitnQVJBQ0dnTlZVMFE0SEhDZm9BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTcwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 22:00"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-19 00:25"
+          },
+          "duration": 145,
+          "airplane": "Airbus A320neo",
+          "airline": "Flynas",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+          "travel_class": "Economy",
+          "flight_number": "XY 572",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 99 kg"
+          ]
+        }
+      ],
+      "total_duration": 145,
+      "carbon_emissions": {
+        "this_flight": 100000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -8
+      },
+      "price": 206,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/XY.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZZV1RVM01ob0xDSitnQVJBQ0dnTlZVMFE0SEhDZm9BRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlhZIiwiNTcyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 06:55"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 09:05"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 382",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 209,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNNE1ob0xDSitqQVJBQ0dnTlZVMFE0SEhDZm93RT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzgyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 01:50"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 04:00"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 386",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 216,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNNE5ob0xDTnVvQVJBQ0dnTlZVMFE0SEhEYnFBRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzg2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 00:05"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 02:15"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "Air Cairo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+          "travel_class": "Economy",
+          "flight_number": "SM 969",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 112 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 112000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 3
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVFRrMk9Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNNIiwiOTY5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 00:30"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 02:40"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 663",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 95 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 96000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -12
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZMk14b0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjYzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 01:55"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 04:05"
+          },
+          "duration": 130,
+          "airplane": "Boeing 737",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 673",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 134 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 134000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 23
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZM014b0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjczIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 03:05"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 05:15"
+          },
+          "duration": 130,
+          "airplane": "Boeing 737",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 665",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 134 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 134000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 23
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZMk5Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjY1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 08:20"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 10:30"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 661",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Carbon emissions estimate: 117 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 117000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 7
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZMk1Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjYxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 19:50"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 22:00"
+          },
+          "duration": 130,
+          "airplane": "Boeing 737",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 669",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 124 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 125000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 15
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZMk9Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjY5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 20:20"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 22:30"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "Air Cairo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+          "travel_class": "Economy",
+          "flight_number": "SM 479",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 112 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 112000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 3
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVFRRM09Sb0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNNIiwiNDc5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 21:35"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 23:45"
+          },
+          "duration": 130,
+          "airplane": "Boeing 737",
+          "airline": "EgyptAir",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+          "travel_class": "Economy",
+          "flight_number": "MS 643",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 129 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 129000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 18
+      },
+      "price": 223,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MS.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZOVXpZME14b0xDSnl1QVJBQ0dnTlZVMFE0SEhDY3JnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk1TIiwiNjQzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 12:40"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 14:50"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 300",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 228,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNd01Cb0xDSXV5QVJBQ0dnTlZVMFE0SEhDTHNnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzAwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 15:00"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 17:10"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 306",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 228,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNd05ob0xDSXV5QVJBQ0dnTlZVMFE0SEhDTHNnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzA2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 20:50"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 23:00"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 302",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 228,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNd01ob0xDSXV5QVJBQ0dnTlZVMFE0SEhDTHNnRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzAyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 04:30"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 06:40"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "Air Cairo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+          "travel_class": "Economy",
+          "flight_number": "SM 477",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 112 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 112000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 3
+      },
+      "price": 262,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVFRRM054b0xDTmpNQVJBQ0dnTlZVMFE0SEhEWXpBRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNNIiwiNDc3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 10:30"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 12:40"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "Air Cairo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+          "travel_class": "Economy",
+          "flight_number": "SM 475",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 112 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 112000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 3
+      },
+      "price": 262,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SM.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVFRRM05Sb0xDTmpNQVJBQ0dnTlZVMFE0SEhEWXpBRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNNIiwiNDc1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 18:10"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 20:20"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 304",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 263,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNd05Cb0xDTGZOQVJBQ0dnTlZVMFE0SEhDM3pRRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzA0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 23:25"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-19 01:35"
+          },
+          "duration": 130,
+          "airplane": "Airbus A330",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 388",
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 94 kg"
+          ]
+        }
+      ],
+      "total_duration": 130,
+      "carbon_emissions": {
+        "this_flight": 95000,
+        "typical_for_this_route": 109000,
+        "difference_percent": -13
+      },
+      "price": 263,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNNE9Cb0xDTGZOQVJBQ0dnTlZVMFE0SEhDM3pRRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzg4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 12:45"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 15:00"
+          },
+          "duration": 135,
+          "airplane": "Airbus A320",
+          "airline": "Nile Air",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NP.png",
+          "travel_class": "Economy",
+          "flight_number": "NP 127",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 112 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 112000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 3
+      },
+      "price": 282,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NP.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZPVURFeU54b0xDS2pjQVJBQ0dnTlZVMFE0SEhDbzNBRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk5QIiwiMTI3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 17:40"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 19:55"
+          },
+          "duration": 135,
+          "airplane": "Airbus A321",
+          "airline": "Saudia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+          "travel_class": "Economy",
+          "flight_number": "SV 330",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 128 kg"
+          ]
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 128000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 17
+      },
+      "price": 294,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZUVmpNek1Cb0xDTlBsQVJBQ0dnTlZVMFE0SEhEVDVRRT0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIlNWIiwiMzMwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Cairo International Airport",
+            "id": "CAI",
+            "time": "2026-09-18 02:15"
+          },
+          "arrival_airport": {
+            "name": "King Abdulaziz International Airport",
+            "id": "JED",
+            "time": "2026-09-18 04:30"
+          },
+          "duration": 135,
+          "airplane": "Airbus A321",
+          "airline": "Nesma Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NE.png",
+          "travel_class": "Economy",
+          "flight_number": "NE 174",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 115 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 135,
+      "carbon_emissions": {
+        "this_flight": 116000,
+        "typical_for_this_route": 109000,
+        "difference_percent": 6
+      },
+      "price": 410,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/NE.png",
+      "departure_token": "WyJDalJJWTI5b0xVMHdTbTU1ZG5OQlRGZFdXV2RDUnkwdExTMHRMUzB0TFhscFltaHBPVUZCUVVGQlIzQTFWakkwUmpWZlQxTkJFZ1ZPUlRFM05Cb0xDS2pBQWhBQ0dnTlZVMFE0SEhDb3dBST0iLFtbIkNBSSIsIjIwMjYtMDktMTgiLCJKRUQiLG51bGwsIk5FIiwiMTc0Il1dXQ=="
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 195,
+    "price_level": "typical",
+    "typical_price_range": [
+      175,
+      285
+    ],
+    "price_history": [
+      [
+        1781125200,
+        205
+      ],
+      [
+        1781211600,
+        205
+      ],
+      [
+        1781298000,
+        204
+      ],
+      [
+        1781384400,
+        204
+      ],
+      [
+        1781470800,
+        201
+      ],
+      [
+        1781557200,
+        199
+      ],
+      [
+        1781643600,
+        203
+      ],
+      [
+        1781730000,
+        204
+      ],
+      [
+        1781816400,
+        205
+      ],
+      [
+        1781902800,
+        205
+      ],
+      [
+        1781989200,
+        205
+      ],
+      [
+        1782075600,
+        198
+      ],
+      [
+        1782162000,
+        203
+      ],
+      [
+        1782248400,
+        203
+      ],
+      [
+        1782334800,
+        203
+      ],
+      [
+        1782421200,
+        205
+      ],
+      [
+        1782507600,
+        205
+      ],
+      [
+        1782594000,
+        205
+      ],
+      [
+        1782680400,
+        198
+      ],
+      [
+        1782766800,
+        197
+      ],
+      [
+        1782853200,
+        205
+      ],
+      [
+        1782939600,
+        205
+      ],
+      [
+        1783026000,
+        205
+      ],
+      [
+        1783112400,
+        205
+      ],
+      [
+        1783198800,
+        204
+      ],
+      [
+        1783285200,
+        196
+      ],
+      [
+        1783371600,
+        195
+      ],
+      [
+        1783458000,
+        195
+      ],
+      [
+        1783544400,
+        198
+      ],
+      [
+        1783630800,
+        196
+      ],
+      [
+        1783717200,
+        197
+      ],
+      [
+        1783803600,
+        197
+      ],
+      [
+        1783890000,
+        191
+      ],
+      [
+        1783976400,
+        192
+      ],
+      [
+        1784062800,
+        207
+      ],
+      [
+        1784149200,
+        205
+      ],
+      [
+        1784235600,
+        207
+      ],
+      [
+        1784322000,
+        206
+      ],
+      [
+        1784408400,
+        207
+      ],
+      [
+        1784494800,
+        204
+      ],
+      [
+        1784581200,
+        202
+      ],
+      [
+        1784667600,
+        202
+      ],
+      [
+        1784754000,
+        195
+      ],
+      [
+        1784840400,
+        194
+      ],
+      [
+        1784926800,
+        194
+      ],
+      [
+        1785013200,
+        191
+      ],
+      [
+        1785099600,
+        190
+      ],
+      [
+        1785186000,
+        191
+      ],
+      [
+        1785272400,
+        191
+      ],
+      [
+        1785358800,
+        190
+      ],
+      [
+        1785445200,
+        193
+      ],
+      [
+        1785531600,
+        192
+      ],
+      [
+        1785618000,
+        192
+      ],
+      [
+        1785704400,
+        189
+      ],
+      [
+        1785790800,
+        192
+      ],
+      [
+        1785877200,
+        190
+      ],
+      [
+        1785963600,
+        192
+      ],
+      [
+        1786050000,
+        191
+      ],
+      [
+        1786136400,
+        190
+      ],
+      [
+        1786222800,
+        191
+      ],
+      [
+        1786309200,
+        195
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "CAI",
+            "name": "Cairo International Airport"
+          },
+          "city": "Cairo",
+          "country": "Egypt",
+          "country_code": "EG",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7ULfG_02k52ZUkT4SMv7eA5_XFLGUgtQP_gC4pBuZtEmSzwHjjK5wnTa4EydhWQZpABieItDPpIw1bA",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSnrxz7k5kf6djuK1GMLNohWzFgdjfs-nlAN8vxOFLaRegspA7dbLL7ECQ-QfprCeItnbklqMs7TjbNW9zOrDToFoBJRvX-nBu5N40XIbM"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "JED",
+            "name": "King Abdulaziz International Airport"
+          },
+          "city": "Jeddah",
+          "country": "Saudi Arabia",
+          "country_code": "SA",
+          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT-Nu9bjeeaG71vYFrB2h0dwFSgZuS0J5c4I1v3H4N008uOr_N6V8ggLvH9mAg9pnPPgK4z1bU8ah1tMg",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYQEsUVZdpac1DqSzwcMx3FVG0C_k9OuuuVLwbOHuffeYt7fTf7DeMOtBMWiNeNkCJV4a4E49DmIzMMMk_Fa07FrE6lAOmrxcvDNhgoaQ"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "JED",
+            "name": "King Abdulaziz International Airport"
+          },
+          "city": "Jeddah",
+          "country": "Saudi Arabia",
+          "country_code": "SA",
+          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT-Nu9bjeeaG71vYFrB2h0dwFSgZuS0J5c4I1v3H4N008uOr_N6V8ggLvH9mAg9pnPPgK4z1bU8ah1tMg",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYQEsUVZdpac1DqSzwcMx3FVG0C_k9OuuuVLwbOHuffeYt7fTf7DeMOtBMWiNeNkCJV4a4E49DmIzMMMk_Fa07FrE6lAOmrxcvDNhgoaQ"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "CAI",
+            "name": "Cairo International Airport"
+          },
+          "city": "Cairo",
+          "country": "Egypt",
+          "country_code": "EG",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7ULfG_02k52ZUkT4SMv7eA5_XFLGUgtQP_gC4pBuZtEmSzwHjjK5wnTa4EydhWQZpABieItDPpIw1bA",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSnrxz7k5kf6djuK1GMLNohWzFgdjfs-nlAN8vxOFLaRegspA7dbLL7ECQ-QfprCeItnbklqMs7TjbNW9zOrDToFoBJRvX-nBu5N40XIbM"
+        }
+      ]
+    }
+  ]
+}
