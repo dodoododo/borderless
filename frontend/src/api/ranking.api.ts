@@ -2,7 +2,7 @@
 import type { RankingData } from '../types/ranking.type';
 
 // Nên lưu URL này trong file .env (ví dụ: VITE_API_URL=http://localhost:5000/api)
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 export const RankingService = {
   /**

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { TERRITORY_MAPPING } from '../constants/territoryMapping'; // Import bảng mapping của bác
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 export function usePassportData(iso: string) {
   const [data, setData] = useState<any>(null);
