@@ -12,13 +12,9 @@ const COLOR_MAPPING: Record<string, { dark: string; light: string; label: string
   visaonarrival: { dark: "#f59e0b", light: "#d97706", label: "Visa on Arrival" },
   evisa: { dark: "#0ea5e9", light: "#0284c7", label: "eVisa" },
   eta: { dark: "#8b5cf6", light: "#7c3aed", label: "ETA" },
-  visarequired: { dark: "#27272a", light: "#9ea6b0", label: "Visa Required" }, // Đổi thành xám đậm hơn chút để dễ nhìn
+  visarequired: { dark: "#27272a", light: "#9ea6b0", label: "Visa Required" },
   restricted: { dark: "#f43f5e", light: "#e03d61", label: "Restricted" },
-  default: { dark: "#18181b", light: "#f1f5f9", label: "No Info" }, // Đổi nền default nhạt bớt
-};
-const normalizeKey = (str: string | undefined): string => {
-  if (!str) return "default";
-  return str.toLowerCase().replace(/[\s-_]/g, "");
+  default: { dark: "#18181b", light: "#f1f5f9", label: "No Info" },
 };
 
 // Darken a hex color by a factor (0-1, lower = darker) for hover state
@@ -31,13 +27,13 @@ const darken = (hex: string, factor: number = 0.82): string => {
 };
 
 const FALLBACK_ISO: Record<string, string> = {
-            "France": "fr",
-            "Norway": "no",
-            "Somaliland": "so", // Somaliland thường xét chung visa với Somalia (SO)
-            "Kosovo": "xk",
-            "Northern Cyprus": "cy",
-            "Western Sahara": "ma"
-          };
+  "France": "fr",
+  "Norway": "no",
+  "Somaliland": "so", 
+  "Kosovo": "xk",
+  "Northern Cyprus": "cy",
+  "Western Sahara": "ma"
+};
 
 const VisaMapComponent = ({ destinationMap, theme }: VisaMapProps) => {
   const [geoData, setGeoData] = useState<any>(null);
@@ -73,56 +69,46 @@ const VisaMapComponent = ({ destinationMap, theme }: VisaMapProps) => {
       backgroundColor: isDark ? "#404f73" : "#bed8e8",
       tooltip: {
         trigger: "item",
-        backgroundColor: isDark ? "#18181b" : "#ffffff",
+        appendToBody: true,
+        backgroundColor: isDark ? "rgba(24, 24, 27, 0.95)" : "rgba(255, 255, 255, 0.95)",
         borderColor: isDark ? "#b7b7c4" : "#707070",
+        borderWidth: 1,
+        padding: 5,
         textStyle: {
           color: isDark ? "#fafafa" : "#0f172a",
           fontSize: 12,
         },
         formatter: (params: any) => {
           const countryName = params.name || "Unknown";
-          const rawStatus = params.data?.statusText || "No Info";
-          
-          let displayStatus = rawStatus;
-          let dotColor = "#cbd5e1"; // Màu mặc định (Xám nhạt)
+          const data = params.data?.customData;
 
-          const normKey = rawStatus.toLowerCase().replace(/[\s-_]/g, "");
-          const isNumber = !isNaN(Number(normKey)) && normKey.trim() !== "";
+          if (!data) return countryName; 
 
-          // 🚀 THÊM LOGIC HOME COUNTRY Ở NGAY ĐÂY
-          if (rawStatus == 1) {
-            displayStatus = "Home Country";
-            dotColor = "#c6d400"; // Màu tím (hoặc màu nào bác thích để làm nổi bật quê hương)
-          } 
-          // Các logic còn lại giữ nguyên
-          else if (isNumber) {
-            displayStatus = `Visa Free (${rawStatus} days stay)`;
-            dotColor = "#10b981"; // Xanh lá
-          } else if (normKey.includes("free")) {
-            dotColor = "#10b981"; 
-          } else if (normKey.includes("arrival")) {
-            dotColor = "#f59e0b"; 
-          } else if (normKey.includes("evisa") || normKey.includes("eta") || normKey.includes("esta") || normKey.includes("electronic")) {
-            dotColor = "#0ea5e9"; 
-          } else if (normKey.includes("required")) {
-            dotColor = "#71717a"; 
-          } else if (normKey.includes("restricted") || normKey.includes("prohibited") || normKey.includes("noadmission") || normKey.includes("refused")) {
-            dotColor = "#f43f5e"; 
-          }
+          const { displayText, note, dotColor } = data;
 
-          return `
-            <div style="display: flex; flex-direction: column; gap: 4px; padding: 2px 4px;">
-              <div style="font-weight: 700; font-size: 13px; letter-spacing: -0.2px;">
+          let tooltipHtml = `
+            <div style="display: flex; flex-direction: column; gap: 3px; max-width: 400px; white-space: normal; word-wrap: break-word;">
+              <div style="font-weight: 500; font-size: 14px; letter-spacing: -0.2px;">
                 ${countryName}
               </div>
-              <div style="display: flex; align-items: center; gap: 6px;">
+              <div style="display: flex; align-items: center; gap: 2px;">
                 <span style="display: block; width: 8px; height: 8px; border-radius: 50%; background-color: ${dotColor};"></span>
-                <span style="font-size: 12px; font-weight: 500; opacity: 0.9;">
-                  ${displayStatus}
+                <span style="font-size: 13px; font-weight: 400;">
+                  ${displayText}
                 </span>
               </div>
-            </div>
           `;
+
+          if (note) {
+            tooltipHtml += `
+              <div style="margin-top: 1px; font-size: 11px; line-height: 1.4; border-top: 1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}; padding-top: 3px;">
+                ${note}
+              </div>
+            `;
+          }
+
+          tooltipHtml += `</div>`;
+          return tooltipHtml;
         },
       },
       series: [
@@ -131,7 +117,6 @@ const VisaMapComponent = ({ destinationMap, theme }: VisaMapProps) => {
           map: "world",
           roam: true,
           scaleLimit: { min: 1, max: 8 },
-          // Fallback fill for any region that somehow has no data entry
           top: "5%",
           bottom: "0%",
           left: "1%",
@@ -149,34 +134,103 @@ const VisaMapComponent = ({ destinationMap, theme }: VisaMapProps) => {
             const prop = feature.properties || {};
             const countryName = prop.name || "";
             
-            // Lấy mã ISO từ file (nếu có)
             let rawIso = (prop["ISO3166-1-Alpha-2"] || prop.iso_a2 || prop.id || "").toLowerCase();
-            
-            // 🚀 BÍ QUYẾT FIX LỖI Ở ĐÂY: Nếu gặp mã lỗi -99 hoặc rỗng, tự động map theo tên
             if (rawIso === "-99" || rawIso === "") {
               rawIso = FALLBACK_ISO[countryName] || rawIso;
             }
 
             const isoCode = rawIso;
-            const rawStatus = destinationMap[isoCode];
-            const normKey = normalizeKey(rawStatus);
+            const rawStatus = destinationMap[isoCode] || "";
 
-            // Xử lý logic màu sắc
-            const isNumber = !isNaN(Number(normKey)) && normKey.trim() !== "";
+            // =====================================================================
+            // 🚀 BƯỚC 1: TÁCH BẠCH CHUỖI VÀ NOTE SIÊU CHUẨN Y HỆT BÊN NGOÀI
+            // =====================================================================
+            let baseStatus = rawStatus.trim();
+            let noteContent = "";
+
+            const match = rawStatus.match(/(\s+-\s+|\s+(?=["']))/);
+            if (match && match.index !== undefined) {
+              baseStatus = rawStatus.substring(0, match.index).trim();
+              noteContent = rawStatus.substring(match.index + match[0].length).trim();
+              noteContent = noteContent.replace(/^["']+|["']+$/g, "").trim();
+            }
+
+            const s = baseStatus.toLowerCase();
+
+            // =====================================================================
+            // 🚀 BƯỚC 2: LỌC MÀU (THỨ TỰ ƯU TIÊN TUYỆT ĐỐI)
+            // =====================================================================
             let key: keyof typeof COLOR_MAPPING = "default";
             
-            if (normKey.includes("free") || isNumber) key = "visafree";
-            else if (normKey.includes("arrival")) key = "visaonarrival";
-            else if (normKey.includes("evisa")) key = "evisa";
-            else if (normKey.includes("eta") || normKey.includes("esta") || normKey.includes("electronic")) key = "eta";
-            else if (normKey.includes("required")) key = "visarequired";
-            else if (normKey.includes("restricted") || normKey.includes("prohibited") || normKey.includes("noadmission") || normKey.includes("refused")) key = "restricted";
+            if (s) {
+              if (/^\d+/.test(s)) {
+                key = "visafree";
+              } 
+              else if (
+                s.includes('restricted') || s.includes('prohibited') || 
+                s.includes('no admission') || s.includes('noadmission') || 
+                s.includes('refused') || s.includes('suspended') || 
+                s.includes('banned') || /\bban\b/.test(s) || s.includes('covid')
+              ) {
+                key = "restricted";
+              } 
+              else if (s.includes('required') || s.includes('tourist card')) {
+                key = "visarequired";
+              } 
+              else if (s.includes('arrival') || s === 'voa' || s.includes('e-voa')) {
+                key = "visaonarrival";
+              } 
+              else if (s.includes('eta') || s.includes('electronic travel') || s.includes('electronic border')) {
+                key = "eta";
+              } 
+              else if (
+                s.includes('e-visa') || s.includes('evisa') || s.includes('e visa') || 
+                s.includes('electronic') || s.includes('online') || s.includes('smart service')
+              ) {
+                key = "evisa";
+              } 
+              else if (s.includes('free') || s.includes('not required') || s.includes('freedom')) {
+                key = "visafree";
+              } 
+              else {
+                key = "visarequired"; // Mặc định an toàn
+              }
+            }
 
-            const baseColor = isDark ? COLOR_MAPPING[key].dark : COLOR_MAPPING[key].light;
+            // =====================================================================
+            // 🚀 BƯỚC 3: FORMAT TEXT HIỂN THỊ LÊN TOOLTIP SẠCH BÓNG
+            // =====================================================================
+            const isNumeric = /^\d+$/.test(baseStatus);
+            let displayText = baseStatus;
+
+            if (isNumeric && (baseStatus === '1' || baseStatus === '-1')) {
+              displayText = "Home Country";
+            } else if (isNumeric) {
+              displayText = `Visa Free (${baseStatus} days)`;
+            } else if (key === "visafree") {
+              displayText = "Visa Free";
+            } else if (baseStatus) {
+              displayText = baseStatus.charAt(0).toUpperCase() + baseStatus.slice(1);
+            } else {
+              displayText = "No Data";
+            }
+
+            // =====================================================================
+            // 🚀 LẤY MÀU VÀ GÁN DỮ LIỆU ĐỂ RENDER
+            // =====================================================================
+            let baseColor = isDark ? COLOR_MAPPING[key].dark : COLOR_MAPPING[key].light;
+            if (baseStatus === "1" || baseStatus === "-1") {
+               baseColor = "#c6d400"; // Màu đặc biệt cho Home Country
+            }
 
             return {
               name: countryName,
-              statusText: rawStatus || "No Data",
+              customData: {
+                displayText,
+                note: noteContent,
+                dotColor: baseColor,
+                rawStatus
+              },
               itemStyle: {
                 areaColor: baseColor,
               },

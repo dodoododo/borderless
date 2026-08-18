@@ -115,7 +115,7 @@ export function OpennessPage() {
   const handleBarMouseLeave = () => setTooltip(null);
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-background pt-20 font-sans">
+    <div className="flex flex-col lg:flex-row bg-background font-sans">
       
       {/* CỘT TRÁI: BẢN ĐỒ THẾ GIỚI - Đổi màu biển sang tone Tím sẫm */}
       <div className="w-full lg:w-1/2 h-[50vh] lg:h-[calc(100vh-5rem)] border-b-gray-500 lg:sticky top-20 border-b lg:border-b-0 lg:border-r-2 border-gray-400 light:bg-[#ddd6fe] bg-[#c4b5fd] dark:bg-[#2e1065]">

@@ -392,7 +392,7 @@ export function CountryModal({ iso, isOpen, onClose }: CountryModalProps) {
       <div
         ref={panelRef}
         className={
-          "relative w-full max-w-[1050px] max-h-screen sm:max-h-[88vh] bg-white text-slate-900 overflow-y-auto flex flex-col transition-all duration-200 sm:rounded sm:shadow-2xl overscroll-contain" +
+          "relative w-full max-w-[1050px] max-h-screen sm:max-h-[88vh] bg-white text-slate-900 overflow-y-auto flex flex-col transition-all duration-200 sm:rounded sm:shadow-2xl" +
           (entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3.5")
         }
         style={accentVars}

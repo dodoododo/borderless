@@ -12,6 +12,7 @@ import passportRoutes from './routes/passport.route.js';
 import countryRoutes from './routes/country.route.js'; // Nhét thằng em mới vào đây
 import rankingRoutes from './routes/ranking.route.js';
 import flightRoutes from './routes/flight.route.js';
+import airportRoutes from './routes/airport.route.js';
 import { fileURLToPath } from 'url';
 // import placeRoutes from './routes/place.route.js';
 
@@ -36,7 +37,7 @@ app.use('/api/countries', countryRoutes); // Bơm route country vào path /api/c
 app.use('/api/rankings', rankingRoutes);
 // app.use('/api/places', placeRoutes);
 app.use('/api/flights', flightRoutes);
-
+app.use('/api/airports', airportRoutes);
 // --- KHỞI ĐỘNG SERVER ---
 
 // Kết nối DB trước khi lắng nghe request

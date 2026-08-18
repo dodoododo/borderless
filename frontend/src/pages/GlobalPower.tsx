@@ -95,7 +95,7 @@ export function GlobalPower() {
 
   return (
     // Bố cục chia 2 cột trên Desktop (lg)
-    <div className="flex flex-col lg:flex-row min-h-screen bg-background pt-20 font-sans">
+    <div className="flex flex-col lg:flex-row bg-background font-sans">
       
       {/* CỘT TRÁI: BẢN ĐỒ THẾ GIỚI (Cố định khi cuộn) */}
       <div className="w-full lg:w-1/2 h-[50vh] lg:h-[calc(100vh-5rem)] border-b-gray-500 lg:sticky top-20 border-b lg:border-b-0 lg:border-r-2 border-gray-400 light:bg-[#7294d4] bg-[#accae6] dark:bg-[#6387a8]">
@@ -127,9 +127,18 @@ export function GlobalPower() {
               onChange={(e) => setSelectedPeriod(e.target.value)}
               className="w-full h-12 pl-11 pr-4 bg-foreground/[0.1] border border-border/50 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-foreground font-bold appearance-none cursor-pointer"
             >
-              {availablePeriods.map(p => (
-                <option key={p} value={p}>{p}</option>
-              ))}
+              {availablePeriods.map(p => {
+                // Map specific timeline keys to include descriptive COVID period labels
+                let label = p;
+                if (p === '2020-02') label = '2020-02 (covid-19)';
+                else if (p === '2020-05') label = '2020-05 (initial border closures)';
+                else if (p === '2020-11') label = '2020-11 (severe covid-19 restrictions)';
+                else if (p === '2021-12') label = '2021-12 (early reopening phase)';
+
+                return (
+                  <option key={p} value={p}>{label}</option>
+                );
+              })}
             </select>
           </div>
 

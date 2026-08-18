@@ -26,6 +26,8 @@ import { RankingService } from "../api/ranking.api";
 import { fetchPassportStatus } from "../api/passport.api";
 import { resolveStatusLabel } from "../types/visa.type";
 import type { RankingData } from "../types/ranking.type";
+import { parseDestinationStatus, type StatusCategory } from "../utils/visaParser";
+
 
 const CHART_COLORS = ["#059669", "#2563eb", "#d97706", "#7c3aed", "#e11d48"];
 
@@ -62,8 +64,9 @@ export function ComparePage() {
   const [dropdownSearch, setDropdownSearch] = useState("");
 
   // Target cho modal Apply
-  const [applyTarget, setApplyTarget] = useState<{ iso: string; name: string; status: string; fromPassport: string } | null>(null);
+  const [applyTarget, setApplyTarget] = useState<{ iso: string; name: string; status: string; fromPassport: string; extractedNote?: string; } | null>(null);
 
+  // const { category, displayText, note } = parseDestinationStatus(status);
   // 1. FETCH GLOBAL RANKING 
   useEffect(() => {
     const loadGlobalData = async () => {
@@ -160,7 +163,7 @@ export function ComparePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 pt-24 font-sans selection:bg-emerald-500/30">
+    <div className="bg-[#fafafa] dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-500/30">
       <div className="mx-auto">
         
         {/* HEADER SECTION */}
@@ -386,6 +389,7 @@ export function ComparePage() {
                           </div>
 
                           {/* CÁC CỘT VISA STATUS (Tái sinh Animation cũ) */}
+                          {/* CÁC CỘT VISA STATUS (Đã tích hợp hàm Parse chuẩn) */}
                           {selectedPassports.map((iso, index) => {
                             if (!iso) {
                               return <div key={index} className="flex-1 min-w-40 border-r last:border-0 border-slate-500 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/30" />;
@@ -402,7 +406,7 @@ export function ComparePage() {
                             const destMap = visaDataMap[iso];
                             const rawStatus = destMap ? destMap[destIso] : undefined;
                             
-                            // Trạng thái trống
+                            // Trạng thái trống (VD: Database chưa có thông tin)
                             if (!rawStatus) {
                               return (
                                 <div key={index} className="flex-1 min-w-40 p-3 border-r last:border-0 border-slate-200 dark:border-zinc-800 flex items-center ">
@@ -411,36 +415,38 @@ export function ComparePage() {
                               );
                             }
 
-                            // Xác định Interactive & Text hiển thị theo logic cũ
-                            const s = rawStatus.toLowerCase();
-                            const isNum = !isNaN(Number(s)) && s.trim() !== "";
-                            const isInteractive = ["e-visa", "evisa", "eta", "electronic"].some(keyword => s.includes(keyword));
+                            // XỬ LÝ TRẠNG THÁI "QUÊ NHÀ" (-1)
+                            const isHome = rawStatus.trim() === "-1";
                             
-                            let displayStatus = rawStatus;
-                            if (isNum && s === '-1') displayStatus = `Home Country`;
-                            else if (isNum) displayStatus = `Visa Free (${s} days)`;
-                            else if (s.includes("free")) displayStatus = "Visa Free";
-                            else displayStatus = resolveStatusLabel(rawStatus);
+                            // 🚀 GỌI HÀM PARSE CHUẨN (Đồng bộ với hệ thống)
+                            const { category, displayText, note } = isHome 
+                              ? { category: "home", displayText: "Home Country", note: "" }
+                              : parseDestinationStatus(rawStatus);
 
-                            // Bộ màu nền Solid (Theo thiết kế cũ)
+                            // Chỉ cho phép click Apply Now với eVisa và ETA
+                            const isInteractive = ["evisa", "eta"].includes(category);
+                            
+                            // Bộ màu nền Solid (Theo Category chuẩn)
                             const getCellBg = () => {
-                              if (s === "1" || s === "-1" || s.includes("home")) return "bg-pink-300 dark:bg-pink-200 text-indigo-950";
-                              if (s.includes("free") || isNum) return "bg-emerald-300 dark:bg-emerald-400/90 text-emerald-950";
-                              if (s.includes("arrival")) return "bg-amber-300 dark:bg-amber-400/90 text-amber-950";
-                              if (s.includes("eta")) return "bg-fuchsia-300 dark:bg-fuchsia-400/90 text-fuchsia-950"; 
-                              if (s.includes("e-visa") || s.includes("electronic")) return "bg-blue-200 dark:bg-blue-300 text-blue-950";
-                              if (s.includes("required")) return "bg-gray-300 dark:bg-gray-400/90 text-gray-900";
-                              if (s.includes("noadmission") || s.includes("prohibited") || s.includes("no admission") ) return "bg-rose-400 dark:bg-rose-500/90 text-rose-950";
-                              return "bg-slate-300 dark:bg-slate-400/90 text-slate-900";
+                              switch(category) {
+                                case "home": return "bg-pink-300 dark:bg-pink-200 text-indigo-950";
+                                case "free": return "bg-emerald-300 dark:bg-emerald-400/90 text-emerald-950";
+                                case "arrival": return "bg-amber-300 dark:bg-amber-400/90 text-amber-950";
+                                case "eta": return "bg-fuchsia-300 dark:bg-fuchsia-400/90 text-fuchsia-950"; 
+                                case "evisa": return "bg-blue-200 dark:bg-blue-300 text-blue-950";
+                                case "required": return "bg-gray-300 dark:bg-gray-400/90 text-gray-900";
+                                case "restricted": return "bg-rose-400 dark:bg-rose-500/90 text-rose-950";
+                                default: return "bg-slate-300 dark:bg-slate-400/90 text-slate-900";
+                              }
                             };
 
-                            // Bộ màu khi Hover trượt qua
+                            // Bộ màu nền khi trượt Hover
                             const getHoverBg = () => {
-                              if (s.includes("arrival")) return "bg-amber-500 text-white";
-                              if (s.includes("eta")) return "bg-purple-500 text-white";
-                              if (s.includes("e-visa") || s.includes("electronic")) return "bg-blue-500 text-white";
-                              if (s.includes("required")) return "bg-zinc-700 text-white";
-                              return "bg-emerald-500 text-white";
+                              switch(category) {
+                                case "eta": return "bg-purple-500 text-white";
+                                case "evisa": return "bg-blue-500 text-white";
+                                default: return "bg-emerald-500 text-white"; // Fallback an toàn
+                              }
                             };
 
                             return (
@@ -449,11 +455,13 @@ export function ComparePage() {
                                 initial="rest"
                                 whileHover={isInteractive ? "hover" : "rest"}
                                 animate="rest"
+                                // Đẩy cả thông tin Ghi chú (note) vào ApplyTarget Modal
                                 onClick={() => isInteractive && setApplyTarget({ 
                                   iso: destIso, 
                                   name: destName, 
-                                  status: displayStatus, 
-                                  fromPassport: getCountryName(iso) 
+                                  status: displayText, 
+                                  fromPassport: getCountryName(iso),
+                                  extractedNote: note 
                                 })}
                                 className={`flex-1 min-w-40 border-r border-slate-500 dark:border-zinc-700 last:border-r-0 relative flex items-center justify-between overflow-hidden transition-colors duration-300 ${getCellBg()} ${isInteractive ? 'cursor-pointer' : ''}`}
                               >
@@ -481,10 +489,10 @@ export function ComparePage() {
                                   </motion.div>
                                 )}
 
-                                {/* NỘI DUNG TĨNH (Luôn hiển thị) */}
+                                {/* NỘI DUNG TĨNH (Sử dụng displayText đã được filter sạch bóng) */}
                                 <div className="relative z-10 flex items-center justify-between w-full px-3 py-2">
                                   <span className="text-[11px] font-black tracking-tight uppercase drop-shadow-sm truncate pr-2">
-                                    {displayStatus}
+                                    {displayText}
                                   </span>
                                   
                                   {isInteractive && (

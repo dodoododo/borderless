@@ -11,11 +11,13 @@ import { ComparePage } from "./pages/ComparePage";
 import FoursquareTest  from "./pages/FoursquareTest";
 import CountryDiscover from "./pages/CountryDiscoverPage";
 
-import FlightTester from "./pages/FlightTester"; // Import FlightTester component
+import FlightTester from "./pages/FlightPage"; // Import FlightTester component
+import VisaRequirements from "./pages/VisaRequirements"; // Import VisaRequirements component
 // Import các trang khác trong tương lai ở đây, ví dụ:
 // import { ProfilePage } from "./pages/ProfilePage";
 
 import 'maplibre-gl/dist/maplibre-gl.css';
+
 
 function App() {
   const [theme, setTheme] = useState<"dark" | "light">(() => {
@@ -53,6 +55,7 @@ function App() {
           
           <Route path="/book-flight" element={<FlightTester />} />
 
+          <Route path="/requirements" element={<VisaRequirements />} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
 

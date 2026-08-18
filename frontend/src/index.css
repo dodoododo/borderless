@@ -92,6 +92,128 @@
   --graticule:    oklch(0 0 0 / 10%);
 }
 
+/* Custom react-datepicker - Mytrip Style (#00604A) */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: inherit !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1) !important;
+  /* BẮT BUỘC ĐỂ 2 THÁNG HIỆN SONG SONG: */
+  display: flex !important; 
+  overflow: hidden;
+}
+
+.react-datepicker__month-container {
+  float: left;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+  border-bottom: none !important;
+  padding-top: 16px !important;
+}
+
+.react-datepicker__current-month {
+  font-weight: 700 !important;
+  color: #111827 !important;
+  font-size: 15px !important;
+  margin-bottom: 8px !important;
+}
+
+.react-datepicker__day-name {
+  color: #6b7280 !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  width: 2rem !important;
+}
+
+.react-datepicker__day--outside-month {
+  /* Ẩn hoàn toàn các ngày của tháng khác lọt vào, nhưng vẫn giữ khoảng trống để không vỡ form */
+  visibility: hidden !important; 
+  pointer-events: none !important;
+}
+
+.react-datepicker__day {
+  width: 2rem !important;
+  height: 2rem !important;
+  line-height: 2rem !important;
+  border-radius: 50% !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+  margin: 0.2rem !important;
+  transition: all 0.2s;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #e6f0ee !important;
+  color: #00604a !important;
+}
+
+.react-datepicker__day-name {
+  color: #6b7280 !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  width: 2rem !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Kiểu dáng ngày được chọn (Xanh lá đậm) */
+.react-datepicker__day--selected, 
+.react-datepicker__day--range-start, 
+.react-datepicker__day--range-end,
+.react-datepicker__day--keyboard-selected {
+  background-color: #00604a !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+/* Khoảng thời gian ở giữa (In Range) - Xanh lá nhạt */
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background-color: #b3d9d1 !important;
+  color: #00604a !important;
+  border-radius: 0 !important;
+}
+
+/* Vẫn giữ bo tròn khi hover trong khoảng đang chọn */
+.react-datepicker__day--in-selecting-range:hover,
+.react-datepicker__day--in-range:hover {
+  background-color: #00604a !important;
+  color: white !important;
+  border-radius: 50% !important;
+}
+
+/* Mờ ngày quá khứ */
+.react-datepicker__day--disabled {
+  color: #d1d5db !important;
+  background-color: transparent !important;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: transparent !important;
+  color: #d1d5db !important;
+}
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+.react-datepicker__navigation {
+  top: 18px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #6b7280 !important;
+  border-width: 2px 2px 0 0 !important;
+}
 .dark {
   /* Same tokens — app is dark by default */
   --background: oklch(0.14 0.015 265);

@@ -43,39 +43,41 @@ export const syncRankingsData = async (period: string, isLatest: boolean = false
       const s = normalizeStatus(val);
       if (!s || s === '-1' || destIso === originIso) return; 
 
+      // 🚀 BƯỚC QUAN TRỌNG: TRÍCH XUẤT TRẠNG THÁI GỐC (Bỏ qua phần Note)
+      // Ví dụ: Chuỗi "90 - 'Ghi chú...'" sẽ bị cắt đôi, chỉ lấy đúng số "90"
+      const baseStatus = s.includes(' - ') ? s.split(' - ')[0].trim() : s;
+
       let isAccessible = false;
 
       // =========================================================================
-      // 🚀 BỘ LỌC TỪ KHÓA MỚI (Bao gồm xử lý Covid Ban)
+      // 🚀 BỘ LỌC TỪ KHÓA ĐÃ CẬP NHẬT (Quét trên biến baseStatus)
       // =========================================================================
       
-      if (s.includes('covid') || s.includes('ban') || s.includes('admission') || s.includes('prohibited') || s.includes('restricted')) {
-        // Gom tất cả các trường hợp: 'covid ban', 'no admission', 'banned', 'restricted' vào nhóm CẤM
-        // Không bật isAccessible -> KHÔNG ĐƯỢC CỘNG ĐIỂM
+      if (baseStatus.includes('covid') || baseStatus.includes('ban') || baseStatus.includes('admission') || baseStatus.includes('prohibited') || baseStatus.includes('restricted')) {
         originRank.details.ban++;
       } 
-      else if (s.includes('required')) {
+      else if (baseStatus.includes('required')) {
         originRank.details.req++;
       } 
-      else if (s.includes('arrival') || s === 'voa') {
+      else if (baseStatus.includes('arrival') || baseStatus === 'voa') {
         originRank.details.voa++;
         isAccessible = true;
       } 
-      else if (s.includes('e-visa') || s.includes('evisa') || s.includes('electronic')) {
+      else if (baseStatus.includes('e-visa') || baseStatus.includes('evisa') || baseStatus.includes('electronic')) {
         originRank.details.evisa++;
         isAccessible = true;
       } 
-      else if (s.includes('eta')) {
+      else if (baseStatus.includes('eta')) {
         originRank.details.eta++;
         isAccessible = true;
       } 
-      else if (s.includes('free') || !isNaN(Number(s))) {
-        // Bao gồm 'visa free' và các con số ngày lưu trú (VD: '90', '30')
+      else if (baseStatus.includes('free') || !isNaN(Number(baseStatus))) {
+        // Bây giờ Number('90') sẽ chuẩn xác là số, không còn bị kẹt chữ vào nữa
         originRank.details.free++;
         isAccessible = true;
       } 
       else {
-        // Mặc định an toàn: Nếu là một chuỗi rác hoặc chưa nhận diện được, quy về Visa Required
+        // Mặc định an toàn
         originRank.details.req++;
       }
       // =========================================================================

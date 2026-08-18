@@ -21,6 +21,7 @@ const targetIsos = [
     "VU", "WS", "XK", "YE", "ZA", "ZM", "ZW"
 ];
 
+
 const sourcePassports = [
     { iso: 'AD', wikiName: 'Andorran' }, { iso: 'AE', wikiName: 'Emirati' }, { iso: 'AF', wikiName: 'Afghan' },
     { iso: 'AG', wikiName: 'Antigua_and_Barbuda' }, { iso: 'AL', wikiName: 'Albanian' }, { iso: 'AM', wikiName: 'Armenian' },
@@ -90,13 +91,12 @@ const sourcePassports = [
     { iso: 'YE', wikiName: 'Yemeni' }, { iso: 'ZA', wikiName: 'South_African' }, { iso: 'ZM', wikiName: 'Zambian' },
     { iso: 'ZW', wikiName: 'Zimbabwean' }
 ];
-
 function getIsoCode(rawName) {
     if (!rawName) return null;
-    // Lọc sạch các ký tự ẩn (zero-width space) làm hỏng mã
     let name = rawName.replace(/\[.*?\]/g, '').replace(/\(.*?\)/g, '').replace(/[\u200B-\u200D\uFEFF]/g, '').replace(/ and territories/i, '').trim();
     let lowerName = name.toLowerCase();
 
+    // 🚀 Đã nâng cấp các vùng lãnh thổ tranh chấp
     const overrides = {
         "north korea": "KP", "south korea": "KR", "republic of korea": "KR", "democratic people's republic of korea": "KP",
         "china": "CN", "people's republic of china": "CN", "pr china": "CN",
@@ -107,6 +107,7 @@ function getIsoCode(rawName) {
         "eswatini": "SZ", "swaziland": "SZ",
         "micronesia": "FM", "federated states of micronesia": "FM",
         "palestine": "PS", "state of palestine": "PS",
+        "kosovo": "XK", "republic of kosovo": "XK",
         "vatican city": "VA", "holy see": "VA",
         "united states": "US", "united states of america": "US",
         "united kingdom": "GB", "united kingdom and crown dependencies": "GB",
@@ -128,14 +129,14 @@ function getIsoCode(rawName) {
         "tanzania": "TZ", "united republic of tanzania": "TZ",
         "moldova": "MD", "republic of moldova": "MD",
         "laos": "LA", "lao people's democratic republic": "LA",
-        "taiwan": "TW", 
-        "macau": "MO", "hong kong": "HK",
-        "netherlands": "NL",
-        "uae": "AE", "united arab emirates": "AE",
-        "antigua and barbuda": "AG",
-        "saint kitts and nevis": "KN", "st. kitts and nevis": "KN",
+        "taiwan": "TW", "republic of china (taiwan)": "TW", 
+        "macau": "MO", "macao": "MO", 
+        "hong kong": "HK", "hong kong sar": "HK",
+        "netherlands": "NL", "uae": "AE", "united arab emirates": "AE",
+        "antigua and barbuda": "AG", "saint kitts and nevis": "KN", "st. kitts and nevis": "KN",
         "saint lucia": "LC", "st. lucia": "LC",
-        "saint vincent and the grenadines": "VC", "st. vincent and the grenadines": "VC"
+        "saint vincent and the grenadines": "VC", "st. vincent and the grenadines": "VC",
+        "sri lanka": "LK", "philippines": "PH", "haiti": "HT", "singapore": "SG"
     };
 
     if (overrides[lowerName]) return overrides[lowerName];
@@ -143,7 +144,6 @@ function getIsoCode(rawName) {
     return code || null;
 }
 
-// 🔹 Priority chuẩn mực tuyệt đối
 function parsePassportIndexStatus(reqText, stayText) {
     let req = reqText.replace(/\[.*?\]/g, '').trim().toLowerCase();
     let stay = stayText.replace(/\[.*?\]/g, '').trim().toLowerCase();
@@ -199,20 +199,28 @@ async function buildMatrix() {
             const $ = cheerio.load(response.data);
 
             $('table.wikitable').each((tableIdx, table) => {
-                
-                // 🚀 LÕI CỦA VẤN ĐỀ: Bỏ qua các bảng rác (Bảng Passport Validity, Bảng Ngoại giao...) 
-                // Chỉ cào bảng nào có chứa cột "Visa" hoặc "Allowed stay"
-                let isVisaTable = false;
-                $(table).find('th').each((i, th) => {
-                    let txt = $(th).text().toLowerCase();
-                    if (txt.includes('visa requirement') || txt.includes('allowed stay') || txt.includes('visa policy')) {
-                        isVisaTable = true;
-                    }
+                let countryIdx = -1;
+                let visaIdx = -1;
+                let stayIdx = -1;
+                let noteIdx = -1;
+
+                // 🚀 Quét 3 dòng đầu để bắt dính mọi loại từ vựng Header
+                $(table).find('tr').slice(0, 3).each((rowIndex, tr) => {
+                    if (countryIdx !== -1 && visaIdx !== -1) return;
+                    
+                    $(tr).find('th, td').each((i, th) => {
+                        let txt = $(th).text().toLowerCase().trim();
+                        // 🔹 Đã bổ sung chữ "Visitor to" để "vợt" trọn Bảng Territories
+                        if (txt.includes('country') || txt.includes('territory') || txt.includes('region') || txt.includes('destination') || txt.includes('visitor to')) countryIdx = i;
+                        else if (txt.includes('visa') || txt.includes('entry') || txt.includes('requirement')) visaIdx = i;
+                        else if (txt.includes('stay') || txt.includes('time') || txt.includes('duration') || txt.includes('period')) stayIdx = i;
+                        else if (txt.includes('note') || txt.includes('condition')) noteIdx = i;
+                    });
                 });
-                if (!isVisaTable) return; 
+
+                if (countryIdx === -1 || visaIdx === -1) return;
 
                 let grid = [];
-
                 $(table).find('tbody tr').each((rowIndex, tr) => {
                     grid[rowIndex] = grid[rowIndex] || [];
                     let colIndex = 0;
@@ -252,42 +260,41 @@ async function buildMatrix() {
                 grid.forEach(row => {
                     if (!row || row.length < 2) return;
                     
-                    let destCountry = row[0].replace(/\[.*?\]/g, '').trim();
+                    let destCountry = row[countryIdx] ? row[countryIdx].replace(/\[.*?\]/g, '').trim() : "";
                     let destIso = getIsoCode(destCountry);
-                    let reqIndex = 1;
 
-                    if (!destIso && row.length > 2) {
-                        destCountry = row[1].replace(/\[.*?\]/g, '').trim();
+                    if (!destIso && row[countryIdx + 1]) {
+                        destCountry = row[countryIdx + 1].replace(/\[.*?\]/g, '').trim();
                         destIso = getIsoCode(destCountry);
-                        reqIndex = 2;
                     }
 
                     if (destIso && targetIsos.includes(destIso) && !seenDestinations.has(destIso)) {
                         seenDestinations.add(destIso);
 
-                        let reqText = row[reqIndex] || "";
-                        let stayText = row[reqIndex + 1] || "";
-                        let noteText = row[reqIndex + 2] || "";
+                        let reqText = row[visaIdx] || "";
+                        let stayText = stayIdx !== -1 ? (row[stayIdx] || "") : "";
+                        let noteText = noteIdx !== -1 ? (row[noteIdx] || "") : "";
 
-                        let cleanNote = noteText.replace(/[✓✔√]/g, '').trim();
                         let cleanStay = stayText.replace(/[✓✔√]/g, '').trim();
-
-                        if (['yes', 'no', 'x', 'none'].includes(cleanNote.toLowerCase())) {
-                            cleanNote = "";
-                        }
+                        let cleanNote = noteText.replace(/[✓✔√]/g, '').trim();
+                        if (['yes', 'no', 'x', 'none'].includes(cleanNote.toLowerCase())) cleanNote = "";
 
                         let baseStatus = parsePassportIndexStatus(reqText, cleanStay);
 
-                        // 🚀 GỘP CHUỖI NOTE THÔNG MINH (Kết hợp cả Stay và Note, không lặp lại)
                         let combinedNote = "";
-                        if (cleanStay && cleanNote && cleanStay.toLowerCase() !== cleanNote.toLowerCase()) {
-                            combinedNote = `${cleanStay}; ${cleanNote}`;
-                        } else if (cleanNote) {
+                        if (!isNaN(parseInt(baseStatus))) {
                             combinedNote = cleanNote;
-                        } else if (cleanStay && baseStatus !== cleanStay) {
-                            // Nếu baseStatus là "e-visa", mà stay là "90 days" -> giữ lại "90 days" đưa vào note
-                            combinedNote = cleanStay;
+                        } else {
+                            if (cleanStay && cleanNote && cleanStay.toLowerCase() !== cleanNote.toLowerCase()) {
+                                combinedNote = `${cleanStay}; ${cleanNote}`;
+                            } else if (cleanNote) {
+                                combinedNote = cleanNote;
+                            } else if (cleanStay) {
+                                combinedNote = cleanStay;
+                            }
                         }
+
+                        if (combinedNote.toLowerCase() === reqText.toLowerCase()) combinedNote = "";
 
                         let finalCellValue = baseStatus;
                         if (combinedNote.length > 0) {
@@ -308,7 +315,7 @@ async function buildMatrix() {
         await new Promise(resolve => setTimeout(resolve, 500));
     }
 
-    console.log(`\n⚙️ Đang ráp ma trận CSV...`);
+    console.log(`\n⚙️ Đang ráp ma trận CSV... (Những nước không có trong bảng sẽ mặc định là "visa required")`);
     
     let csvContent = 'Passport,' + targetIsos.join(',') + '\n';
 
@@ -316,13 +323,14 @@ async function buildMatrix() {
         let row = [src.iso];
         for (let dest of targetIsos) {
             let status = matrix[src.iso][dest];
+            // 🚀 Bất kỳ vùng lãnh thổ nào không cào được từ Wiki sẽ rơi thẳng vào "visa required"
             row.push(escapeCSV(status ? status : 'visa required')); 
         }
         csvContent += row.join(',') + '\n';
     }
 
-    fs.writeFileSync('passport_index_199_final.csv', csvContent, 'utf-8');
-    console.log('🎉 XONG! Bản cào FINAL hoàn hảo 100%. Anh yên tâm test nhé!');
+    fs.writeFileSync('passport_index_my_test.csv', csvContent, 'utf-8');
+    console.log('🎉 XONG! Vùng lãnh thổ tranh chấp đã bị càn quét sạch sẽ!');
 }
 
 buildMatrix();

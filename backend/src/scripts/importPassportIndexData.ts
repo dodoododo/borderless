@@ -13,8 +13,8 @@ dotenv.config(); // Kích hoạt đọc file .env (thường để ở file inde
 const MONGO_URI = process.env.MONGO_URI as string;
 
 // 🛑 CẤU HÌNH CHO LẦN CHẠY NÀY
-const PERIOD = "2020-11"; // Đổi tên kỳ tùy theo file CSV bác đang định import
-const IS_LATEST = false;  // Đổi thành true NẾU ĐÂY LÀ FILE MỚI NHẤT (ví dụ: 2026-07)
+const PERIOD = "2026-08"; // Đổi tên kỳ tùy theo file CSV bác đang định import
+const IS_LATEST = true;  // Đổi thành true NẾU ĐÂY LÀ FILE MỚI NHẤT (ví dụ: 2026-07)
 const CSV_FILENAME = `src/data/${PERIOD}/passport-index-matrix-iso2.csv`; // Tên file tương ứng
 
 async function importCSVAndSync() {

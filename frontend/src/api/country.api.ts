@@ -22,3 +22,25 @@ export const fetchCountryProfile = async (iso: string): Promise<CountryProfile |
     throw error;
   }
 };
+
+export const fetchCountryMiniInfo = async (
+  iso: string
+): Promise<{ iso: string; name: string; coverImage: string | null } | null> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/countries/${iso}/mini`);
+    
+    if (response.status === 404) {
+      return null;
+    }
+
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
+    }
+
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error(`[API Call Failed] fetchCountryMiniInfo(${iso}):`, error);
+    throw error; // Quăng lỗi để UI bắt được (hiện thông báo)
+  }
+};

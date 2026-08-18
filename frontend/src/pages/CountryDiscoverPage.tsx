@@ -316,7 +316,7 @@ export default function CountryDiscover() {
     );
 
     return (
-      <div className="min-h-screen bg-[#F4F1EA] flex flex-col items-center pt-24 pb-0">
+      <div className="bg-[#F4F1EA] flex flex-col items-center pt-2 pb-0">
         <style>{CSS}</style>
 
         <div className="max-w-4xl w-full text-center px-6 mb-8">
@@ -425,7 +425,7 @@ export default function CountryDiscover() {
   const isLongIntro = introText.length > 1500;
   return (
     <div
-      className="min-h-screen bg-[#F4F1EA] text-slate-800 pb-20 selection:bg-accent-raw selection:text-white pt-16"
+      className="bg-[#F4F1EA] text-slate-800 pb-20 selection:bg-accent-raw selection:text-white"
       style={accentVars}
     >
       <style>{CSS}</style>
@@ -1247,7 +1247,7 @@ export default function CountryDiscover() {
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <MetricCard label="GDP (PPP)" value={d.economy?.gdpPpp ? `$${(d.economy.gdpPpp/1e9).toFixed(0)}B` : '—'} />
-            <MetricCard label="GDP/Capita" value={d.economy?.gdpPerCapita ? `$${d.economy.gdpPerCapita.toLocaleString()}` : '—'} />
+            <MetricCard label="GDP/Capita (PPP)" value={d.economy?.gdpPerCapita ? `$${d.economy.gdpPerCapita.toLocaleString()}` : '—'} />
             <MetricCard label="Real Growth" value={d.economy?.realGrowthRate ? `${d.economy.realGrowthRate}%` : '—'} />
             <MetricCard label="Inflation" value={d.economy?.inflationRate ? `${d.economy.inflationRate}%` : '—'} />
             <MetricCard label="Unemployment" value={d.economy?.unemploymentRate ? `${d.economy.unemploymentRate}%` : '—'} />

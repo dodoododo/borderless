@@ -46,7 +46,7 @@ const ALL_COUNTRY_CODES = [
 
 const regionNamesVi = new Intl.DisplayNames(['en'], { type: 'region' });
 
-const getCountryName = (iso: string): string => {
+export const getCountryName = (iso: string): string => {
   try { return regionNamesVi.of(iso.toUpperCase()) ?? iso; } 
   catch { return iso; }
 };
@@ -55,21 +55,71 @@ const SORTED_COUNTRIES = ALL_COUNTRY_CODES
   .map((code) => ({ code, name: getCountryName(code) }))
   .sort((a, b) => a.name.localeCompare(b.name, 'en'));
 
-const normalizeStatus = (status: unknown): string => {
-  if (status === null || status === undefined) return 'unknown';
-  if (typeof status === 'number') {
-    if (status === -1) return 'home';
-    return status < 0 ? 'unknown' : 'visa-free';
-  }
+export const parseVisaData = (status: unknown) => {
+  if (status === null || status === undefined) return { category: 'unknown', text: 'Unknown', note: '', days: null };
+  
   const raw = String(status).trim();
-  if (/^-?\d+$/.test(raw)) {
-    const num = parseInt(raw, 10);
-    if (num === -1) return 'home';
-    return num < 0 ? 'unknown' : 'visa-free';
+  let baseStatus = raw;
+  let noteContent = "";
+
+  // Regex gọt dứt điểm dấu gạch ngang và note
+  const match = raw.match(/(\s+-\s+|\s+(?=["']))/);
+  if (match && match.index !== undefined) {
+    baseStatus = raw.substring(0, match.index).trim();
+    noteContent = raw.substring(match.index + match[0].length).trim();
+    noteContent = noteContent.replace(/^["']+|["']+$/g, "").trim();
   }
-  const key = raw.toLowerCase().replace(/[\s_]+/g, '-');
-  const KNOWN = new Set(['visa-free', 'visa-required', 'visa-on-arrival', 'e-visa', 'eta', 'no-admission']);
-  return KNOWN.has(key) ? key : 'unknown';
+
+  const s = baseStatus.toLowerCase();
+  let category = 'unknown';
+  let days: number | null = null;
+
+  // Xử lý các số trực tiếp (VD: "-1", "90")
+  if (/^-?\d+$/.test(baseStatus)) {
+    const num = parseInt(baseStatus, 10);
+    if (num === -1 || num === 1) return { category: 'home', text: 'Home', note: noteContent, days: null };
+    if (num < 0) return { category: 'unknown', text: 'Unknown', note: noteContent, days: null };
+    return { category: 'visa-free', text: `Visa Free (${num} days)`, note: noteContent, days: num };
+  }
+
+  // Quét từ khóa chuẩn theo mức độ ưu tiên
+  const isNumMatch = baseStatus.match(/^(\d+)/);
+  if (isNumMatch) {
+    category = 'visa-free';
+    days = parseInt(isNumMatch[1], 10);
+  } else if (
+    s.includes('restricted') || s.includes('prohibited') || s.includes('no admission') || 
+    s.includes('noadmission') || s.includes('refused') || s.includes('suspended') || 
+    s.includes('banned') || /\bban\b/.test(s) || s.includes('covid')
+  ) {
+    category = 'no-admission';
+  } else if (s.includes('required') || s.includes('tourist card')) {
+    category = 'visa-required';
+  } else if (s.includes('arrival') || s === 'voa' || s.includes('e-voa')) {
+    category = 'visa-on-arrival';
+  } else if (s.includes('eta') || s.includes('electronic travel') || s.includes('electronic border')) {
+    category = 'eta';
+  } else if (
+    s.includes('e-visa') || s.includes('evisa') || s.includes('e visa') || 
+    s.includes('electronic') || s.includes('online') || s.includes('smart service')
+  ) {
+    category = 'e-visa';
+  } else if (s.includes('free') || s.includes('not required') || s.includes('freedom')) {
+    category = 'visa-free';
+  } else {
+    category = 'visa-required';
+  }
+
+  // Tạo Text hiển thị đẹp
+  let text = baseStatus.charAt(0).toUpperCase() + baseStatus.slice(1);
+  if (category === 'visa-free' && days) text = `Visa Free (${days} days)`;
+  else if (category === 'visa-free') text = 'Visa Free';
+
+  return { category, text, note: noteContent, days };
+};
+
+export const normalizeStatus = (status: unknown): string => {
+  return parseVisaData(status).category;
 };
 
 export const generateMapColors = (destinations?: Record<string, any>) => {
@@ -106,10 +156,8 @@ export const generateMapColors = (destinations?: Record<string, any>) => {
   return colors;
 };
 
-const getStayDays = (status: unknown): number | null => {
-  const raw = String(status).trim();
-  if (/^\d+$/.test(raw)) return parseInt(raw, 10);
-  return null;
+export const getStayDays = (status: unknown): number | null => {
+  return parseVisaData(status).days;
 };
 
 // --- Flag color extraction ---

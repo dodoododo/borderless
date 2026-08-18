@@ -16,6 +16,8 @@ import { usePassportStatus } from "../hooks/usePassportStatus.ts";
 import { resolveStatusLabel } from "../types/visa.type.ts";
 import type { RankingData } from "../types/ranking.type"; 
 import { VisaMap } from "../components/VisaMap.tsx"
+import { parseDestinationStatus, type StatusCategory } from "../utils/visaParser";
+
 
 // Hàm dịch mã ISO thành tên quốc gia
 const getCountryName = (isoCode: string) => {
@@ -55,28 +57,99 @@ const STATUS_COLORS_LIGHT: Record<string, string> = {
   "Restricted": "text-[#dc2626] bg-[#dc2626]/10",
 };
 
-// -----------------------------------------------------------------------------
-// STATUS CATEGORIES
-// -----------------------------------------------------------------------------
-type StatusCategory = "free" | "arrival" | "eta" | "evisa" | "required" | "restricted" | "other";
+// export type StatusCategory = "restricted" | "free" | "eta" | "arrival" | "evisa" | "required" | "other";
 
-function getStatusCategory(status: string): StatusCategory {
-  const s = (status || "").toLowerCase().trim();
-  if (s.includes("free") || (!isNaN(Number(s)) && s !== "")) return "free";
-  if (s.includes("arrival")) return "arrival";
-  if (s.includes("eta")) return "eta";
-  if (s.includes("evisa") || s.includes("electronic")) return "evisa";
-  if (s.includes("required")) return "required";
-  if (
-    s.includes("restricted") ||
-    s.includes("prohibited") ||
-    s.includes("no admission") ||
-    s.includes("noadmission") ||
-    s.includes("refused")
-  )
-    return "restricted";
-  return "other";
+export interface ParsedVisaStatus {
+  category: StatusCategory;
+  displayText: string;
+  note: string;
 }
+
+// export function parseDestinationStatus(rawStatus: string): ParsedVisaStatus {
+//   const status = (rawStatus || "").trim();
+
+//   // =====================================================================
+//   // 1. TÁCH BẠCH CHUỖI VÀ NOTE SIÊU CHUẨN (Cân mọi định dạng)
+//   // Bắt các trường hợp: 
+//   // - "e-visa - note" (có gạch ngang)
+//   // - "90 "note"" (chỉ có khoảng trắng liền trước ngoặc kép)
+//   // =====================================================================
+//   let baseStatus = status;
+//   let noteContent = "";
+
+//   const match = status.match(/(\s+-\s+|\s+(?=["']))/);
+//   if (match && match.index !== undefined) {
+//     baseStatus = status.substring(0, match.index).trim();
+//     noteContent = status.substring(match.index + match[0].length).trim();
+//     // Dọn dẹp sạch sẽ ngoặc kép bọc ngoài note
+//     noteContent = noteContent.replace(/^["']+|["']+$/g, "").trim();
+//   }
+
+//   const s = baseStatus.toLowerCase();
+
+//   // =====================================================================
+//   // 2. LỌC CATEGORY (THỨ TỰ ƯU TIÊN TUYỆT ĐỐI)
+//   // =====================================================================
+//   let category: StatusCategory = "other";
+  
+//   // 🚀 ƯU TIÊN SỐ 1: Bắt đầu bằng SỐ -> Auto lụm thành Visa Free
+//   if (/^\d+/.test(s)) {
+//     category = "free";
+//   } 
+//   // 🚀 Nhóm Cấm / Hạn chế: Dùng \bban\b để KHÔNG bắt nhầm "Taliban", "Albania", "Lebanon"
+//   else if (
+//     s.includes('restricted') || s.includes('prohibited') || 
+//     s.includes('no admission') || s.includes('noadmission') || 
+//     s.includes('refused') || s.includes('suspended') || 
+//     s.includes('banned') || /\bban\b/.test(s) || s.includes('covid')
+//   ) {
+//     category = "restricted";
+//   } 
+//   else if (s.includes('required') || s.includes('tourist card')) {
+//     category = "required";
+//   } 
+//   else if (s.includes('arrival') || s === 'voa' || s.includes('e-voa')) {
+//     category = "arrival";
+//   } 
+//   else if (s.includes('eta') || s.includes('electronic travel') || s.includes('electronic border')) {
+//     category = "eta";
+//   } 
+//   else if (
+//     s.includes('e-visa') || s.includes('evisa') || s.includes('e visa') || 
+//     s.includes('electronic') || s.includes('online') || s.includes('smart service')
+//   ) {
+//     category = "evisa";
+//   } 
+//   else if (s.includes('free') || s.includes('not required') || s.includes('freedom')) {
+//     category = "free";
+//   } 
+//   else {
+//     category = "required"; // Mặc định an toàn nhất
+//   }
+
+//   // =====================================================================
+//   // 3. FORMAT TEXT HIỂN THỊ LÊN UI SẠCH BÓNG
+//   // =====================================================================
+//   const isNumeric = /^\d+$/.test(baseStatus);
+//   let displayText = baseStatus;
+
+//   if (isNumeric && baseStatus === '1') {
+//     displayText = "Home Country";
+//   } else if (isNumeric) {
+//     displayText = `Visa Free (${baseStatus} days)`;
+//   } else if (category === "free") {
+//     displayText = "Visa Free";
+//   } else {
+//     // Viết hoa chữ cái đầu cho đẹp (VD: "e-visa" -> "E-visa", "visa required" -> "Visa required")
+//     displayText = baseStatus.charAt(0).toUpperCase() + baseStatus.slice(1);
+//   }
+
+//   return {
+//     category,
+//     displayText,
+//     note: noteContent
+//   };
+// }
 
 interface StatusMeta {
   key: StatusCategory;
@@ -98,6 +171,7 @@ const STATUS_META: StatusMeta[] = [
 ];
 
 const ALL_STATUSES_ON: Record<StatusCategory, boolean> = {
+  home: true,
   free: true,
   arrival: true,
   eta: true,
@@ -306,7 +380,9 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
     () => {
       const q = debouncedSearchQuery.trim().toLowerCase();
       return destinations.filter((d) => {
-        const statusMatch = activeStatuses[getStatusCategory(d.status)];
+        // Dùng hàm parseDestinationStatus để lấy đúng category
+        const category = parseDestinationStatus(d.status).category;
+        const statusMatch = activeStatuses[category];
         const searchMatch = q === "" || d.name.toLowerCase().includes(q) || d.iso.toLowerCase().includes(q);
         return statusMatch && searchMatch;
       });
@@ -317,7 +393,8 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
   const filteredMapData = React.useMemo(() => {
     const data: Record<string, string> = {};
     destinations.forEach((d) => {
-      if (activeStatuses[getStatusCategory(d.status)]) {
+      const category = parseDestinationStatus(d.status).category;
+      if (activeStatuses[category]) {
         data[d.iso] = d.status;
       }
     });
@@ -325,9 +402,10 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
   }, [destinations, activeStatuses]);
 
   const statusCounts = React.useMemo(() => {
-    const counts: Record<StatusCategory, number> = { free: 0, arrival: 0, eta: 0, evisa: 0, required: 0, restricted: 0, other: 0 };
+    const counts: Record<StatusCategory, number> = { home: 0, free: 0, arrival: 0, eta: 0, evisa: 0, required: 0, restricted: 0, other: 0 };
     destinations.forEach((d) => {
-      counts[getStatusCategory(d.status)] += 1;
+      const category = parseDestinationStatus(d.status).category;
+      counts[category] += 1;
     });
     return counts;
   }, [destinations]);
@@ -373,7 +451,7 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
     : undefined;
 
   return (
-    <div className={`w-full min-h-screen ${palette.pageBg} ${palette.text} flex flex-col font-sans transition-colors duration-500 pt-20`}>
+    <div className={`w-full min-h-screen ${palette.pageBg} ${palette.text} flex flex-col font-sans transition-colors duration-500`}>
 
       {/* --- MAIN 3-COLUMN GRID --- */}
         <main className="grid grid-cols-1 lg:grid-cols-[18fr_46fr_30fr] items-start">
@@ -834,7 +912,10 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
               </div>
             )}
             {!destinationsLoading && filteredDestinations.map((dest) => {
-              const isInteractive = ["Visa Required", "eVisa", "ETA", "Electronic Authorization"].includes(dest.status);
+              const { category, displayText, note } = parseDestinationStatus(dest.status);
+              
+              // Nút chỉ tương tác nếu thuộc các nhóm này
+              const isInteractive = ["evisa", "eta"].includes(category);
               
               return (
                 <motion.div
@@ -853,44 +934,39 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
                   </div>
 
                   {/* CỘT 2: Trạng thái Visa / CTA */}
-                  <div className={`relative h-full w-full flex items-center justify-between overflow-hidden transition-all duration-500 ${(() => {
-                    const s = dest.status.toLowerCase();
-                    if (s === "1" || s === "-1" || s.includes("home")) return "bg-indigo-300 text-indigo-950 border-indigo-400";
-                    if (s.includes("free") || !isNaN(Number(s))) return "bg-emerald-300 text-emerald-900 border-emerald-400";
-                    if (s.includes("arrival")) return "bg-amber-300 text-amber-950 border-amber-400";
-                    if (s.includes("eta")) return "bg-fuchsia-300 text-fuchsia-950 border-fuchsia-400"; 
-                    if (s.includes("evisa") || s.includes("electronic")) return "bg-blue-300 text-blue-950 border-blue-400";
-                    if (s.includes("required")) return "bg-gray-300 text-gray-900 border-gray-400";
-                    if (s.includes("noadmission") || s.includes("prohibited") || s.includes("no admission") )  return "bg-rose-400 text-rose-950 border-rose-400";
-                    return "bg-slate-300 text-slate-900 border-slate-400";
-                  })()}`}
-                    onClick={() => isInteractive && setApplyTarget(dest)}
+                  <div 
+                    className={`relative h-full w-full flex items-center justify-between overflow-hidden transition-all duration-500 ${(() => {
+                      // Bắt màu siêu ngắn gọn dựa trên Category
+                      switch(category) {
+                        case "free": return "bg-emerald-300 text-emerald-900 border-emerald-400";
+                        case "arrival": return "bg-amber-300 text-amber-950 border-amber-400";
+                        case "eta": return "bg-fuchsia-300 text-fuchsia-950 border-fuchsia-400";
+                        case "evisa": return "bg-blue-300 text-blue-950 border-blue-400";
+                        case "required": return "bg-gray-300 text-gray-900 border-gray-400";
+                        case "restricted": return "bg-rose-400 text-rose-950 border-rose-400";
+                        default: return "bg-slate-300 text-slate-900 border-slate-400";
+                      }
+                    })()}`}
+                    // Gắn Note vào object để màn hình khác xài
+                    onClick={() => isInteractive && setApplyTarget({ ...dest, extractedNote: note })}
                   >
                     
                     {/* Lớp nền TRƯỢT QUA KHI HOVER */}
                     {isInteractive && (
                       <motion.div
-                        variants={{
-                          rest: { x: "100%", opacity: 0 },
-                          hover: { x: "0%", opacity: 1 },
-                        }}
+                        variants={{ rest: { x: "100%", opacity: 0 }, hover: { x: "0%", opacity: 1 } }}
                         transition={{ type: "spring", stiffness: 250, damping: 25 }}
                         className={`absolute inset-0 z-20 px-4 flex items-center justify-between ${(() => {
-                          const s = dest.status.toLowerCase();
-                          if (s.includes("arrival")) return "bg-amber-500 text-white";
-                          if (s.includes("eta")) return "bg-purple-500 text-white";
-                          if (s.includes("evisa") || s.includes("electronic")) return "bg-blue-500 text-white";
-                          if (s.includes("required")) return "bg-zinc-700 text-white";
-                          return "bg-emerald-500 text-white";
+                          switch(category) {
+                            case "eta": return "bg-purple-500 text-white";
+                            case "evisa": return "bg-blue-500 text-white";
+                            default: return "bg-emerald-500 text-white";
+                          }
                         })()}`}
                       >
                         <span className="text-[13px] font-semibold uppercase tracking-wide flex items-center gap-2 drop-shadow-md">
                           Apply Now
-                          <motion.div 
-                            className="flex items-center justify-center"
-                            animate={{ x: [0, 6, 0] }} 
-                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                          >
+                          <motion.div animate={{ x: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}>
                             <Plane className="w-4 h-4 fill-white/20 rotate-45 transform origin-center" />
                           </motion.div>
                         </span>
@@ -898,17 +974,10 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
                       </motion.div>
                     )}
 
-                    {/* Nội dung tĩnh hiển thị mặc định */}
+                    {/* NỘI DUNG TĨNH: Gọi đúng biến displayText sạch bóng */}
                     <div className="relative z-10 flex items-center justify-between w-full px-3">
                       <span className="text-[12px] font-black tracking-tight uppercase drop-shadow-sm">
-                        {(() => {
-                          const raw = dest.status.trim();
-                          const isNum = !isNaN(Number(raw)) && raw !== "";
-                          if (isNum && raw == '1') return `Home Country`;
-                          if (isNum) return `Visa Free (${raw} days)`;
-                          if (raw.toLowerCase().includes("free")) return "Visa Free";
-                          return dest.status;
-                        })()}
+                        {displayText}
                       </span>
                       
                       <div className="flex items-center gap-2">
@@ -917,9 +986,7 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
                             {dest.duration}
                           </span>
                         )}
-                        {isInteractive && (
-                          <ChevronRight size={20} strokeWidth={3} className="opacity-60" />
-                        )}
+                        {isInteractive && <ChevronRight size={20} strokeWidth={3} className="opacity-60" />}
                       </div>
                     </div>
                   </div>

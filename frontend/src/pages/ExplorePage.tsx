@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 // Import thêm hàm generateMapColors và hook usePassportData
-import { PassportExplorer, CompactCountrySelector, generateMapColors } from "../components/PassportExplorer";
+import { PassportExplorer, CompactCountrySelector, generateMapColors, getCountryName } from "../components/PassportExplorer";
 import { WorldMap } from "../components/WorldMap";
 import { usePassportData } from "../hooks/usePassportData";
 import { Globe, Compass } from 'lucide-react'
@@ -225,12 +225,12 @@ export function ExplorePage({ theme }: ExplorerPageProps) {
   }, [data]);
 
   return (
-    <main className="pt-16 md:pt-16 w-full flex flex-col items-center">      
+    <main className="w-full flex flex-col items-center">      
       
       {/* 2. THÊM z-30 VÀO ĐÂY ĐỂ ĐẢM BẢO DROPDOWN ĐÈ LÊN BẢN ĐỒ */}
       <section className="relative w-full z-30">
         <div
-          className="relative border border-stone-200 py-2 pt-7"
+          className="relative border border-stone-200 py-2"
           style={{ background: 'linear-gradient(to bottom, #FFFFFF 0%, #FCFCFB 100%)' }}
         >
           <FlightRouteBackground />
@@ -318,8 +318,13 @@ export function ExplorePage({ theme }: ExplorerPageProps) {
             <WorldMap 
               height="550px" 
               theme={theme} 
-              countryColors={mapColors} 
-              onCountryClick={(iso) => setSelectedIso(iso)} // Bắn ra selectedIso
+              countryColors={mapColors} // Màu sắc đã được sửa ở Bước 1
+              
+              // 🚀 THÊM 2 DÒNG NÀY VÀO:
+              destinationMap={data?.destinations || {}} 
+              homeCountryName={selectedPassport ? getCountryName(selectedPassport) : ""}
+              
+              onCountryClick={(iso) => setSelectedIso(iso)} 
             />
           </div>
         </section>

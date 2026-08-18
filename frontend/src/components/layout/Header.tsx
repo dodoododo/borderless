@@ -21,6 +21,8 @@ export function Header({ theme, setTheme }: HeaderProps) {
   // Thêm mảng dropdown vào mục Rank
   const navItems = [
     { path: "/explore", label: "Explore" },
+    { path: "/requirements", label: "Visa Reqs" },
+    { path: "/discover", label: "Discover" },
     { 
       path: "/rank", 
       label: "Rank",
@@ -31,9 +33,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
       ]
     },
     { path: "/compare", label: "Compare" },
-    { path: "/discover", label: "Discover" },
     { path: "/book-flight", label: "Book Flight" },
-    { path: "/requirements", label: "Visa Reqs" },
   ];
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
       // initial={{ y: 0 }}
       // animate={{ y: isVisible ? 0 : "-100%" }}
       // transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-      className={`absolute top-0 left-0 z-50 flex h-16 w-full items-center justify-between border-b px-6 md:h-20 md:px-10 transition-colors duration-500 ${
+      className={`relative top-0 left-0 z-50 flex h-16 w-full items-center justify-between border-b px-6 md:h-20 md:px-10 transition-colors duration-500 ${
         theme === 'dark'
           ? 'bg-stone-950/90 border-white/10 backdrop-blur-xl'
           : 'bg-[#FCFCFB]/98 border-stone-200 backdrop-blur-xl shadow-sm'
@@ -239,7 +239,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
                 }}
 
                 // Đã xóa class 'group' ở đây
-                className={`relative flex items-center justify-center text-center min-w-28 px-5 text-sm font-semibold tracking-tight border-l first:border-l-2 overflow-hidden cursor-pointer ${
+                className={`relative flex items-center justify-center text-center min-w-28 px-5 text-sm font-semibold tracking-tight border-l last:border-r overflow-hidden cursor-pointer ${
                   theme === 'dark' ? 'border-white/5' : 'border-black/10'
                 }`}
               >
@@ -319,7 +319,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
       
       {/* Right Side Controls */}
       <div className="flex items-center gap-2 md:gap-3 z-10">
-        <button
+        {/* <button
           onClick={toggleTheme}
           className={`group flex h-9 w-9 items-center justify-center rounded-full border transition-all hover:scale-110 active:scale-95 ${
             theme === 'dark' ? 'border-white/10 bg-white/5 text-gray-300 hover:text-white' : 'border-black/10 bg-black/5 text-gray-600 hover:text-black'
@@ -340,7 +340,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Dropdown Menu */}
