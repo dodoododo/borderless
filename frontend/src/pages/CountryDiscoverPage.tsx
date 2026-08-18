@@ -48,6 +48,7 @@ const CSS = `
   opacity: 0.6;
 }
 `;
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 // Hàm logic lấy ảnh background dựa trên khu vực
 const getHistoryBgImage = (continent = "", subContinent = "") => {
@@ -266,7 +267,7 @@ export default function CountryDiscover() {
         setData(null);
         setIsEcoExpanded(false);    // add this
         setIsIntroExpanded(false);  // add this
-        const res = await fetch(`http://localhost:5000/api/countries/${selectedIso2}/discover`);
+        const res = await fetch(`${API_BASE_URL}/countries/${selectedIso2}/discover`);
         if (!res.ok) throw new Error(`Server Error (${res.status})`);
         const result = await res.json();
         setData(result);

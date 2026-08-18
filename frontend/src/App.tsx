@@ -22,8 +22,8 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 function App() {
   const [theme, setTheme] = useState<"dark" | "light">(() => {
     const savedTheme = localStorage.getItem("app-theme");
-    return (savedTheme as "dark" | "light") || "dark";
-  });
+    return (savedTheme as "dark" | "light") || "light"; // Đổi "dark" thành "light" ở đây
+});
 
   useEffect(() => {
     localStorage.setItem("app-theme", theme);

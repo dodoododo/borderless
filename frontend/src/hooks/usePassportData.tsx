@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { TERRITORY_MAPPING } from '../constants/territoryMapping'; // Import bảng mapping của bác
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export function usePassportData(iso: string) {
   const [data, setData] = useState<any>(null);
@@ -22,7 +23,7 @@ export function usePassportData(iso: string) {
       setError(null); // Reset lỗi mỗi lần fetch mới
       try {
         // 3. Sử dụng targetIso để fetch dữ liệu "cha"
-        const response = await fetch(`http://localhost:5000/api/passports/${targetIso}`);
+        const response = await fetch(`${API_BASE_URL}/passports/${targetIso}`);
         
         if (!response.ok) {
           throw new Error(`Failed to fetch data for ${targetIso}`);
