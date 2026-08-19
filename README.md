@@ -48,7 +48,6 @@ It brings together passport strength rankings, visa requirement exploration, cou
 - [Limitations & Data Accuracy](#limitations--data-accuracy)
 - [Roadmap](#roadmap)
 - [Developer](#developer)
-- [License](#license)
 
 ---
 
