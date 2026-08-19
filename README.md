@@ -1,9 +1,17 @@
-<p align="center">
-  <h1 align="center">BorderLess</h1>
-  <p align="center">
-    A global mobility platform combining visa intelligence, passport rankings, country exploration, AI-generated destination insights, and flight discovery.
+<div align="center">
+  <br />
+  <a href="YOUR_LIVE_DEMO_URL" target="_blank">
+    <img width="160" alt="BorderLess Compass Logo" src="https://github.com/user-attachments/assets/eea69eb4-4989-410a-9b96-598175e87c80" />
+  </a>
+  
+  <h1>B O R D E R L E S S</h1>
+  
+  <p>
+    <strong>Where can I go, how can I get there, and what should I know before I go?</strong><br>
+    <i>A global mobility platform combining visa intelligence, passport rankings, country exploration,<br>AI-generated destination insights, and flight discovery.</i>
   </p>
-</p>
+  <br />
+</div>
 
 <p align="center">
   <a href="https://borderless-ochre.vercel.app/">Live Demo</a> ·
@@ -43,7 +51,6 @@ It brings together passport strength rankings, visa requirement exploration, cou
 - [Design Philosophy](#design-philosophy)
 - [Technology Stack](#technology-stack)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Data Sources & Responsible Use](#data-sources--responsible-use)
 - [Limitations & Data Accuracy](#limitations--data-accuracy)
 - [Roadmap](#roadmap)
@@ -85,6 +92,7 @@ Structured data (visa rules, statistics, government and economic facts) is deter
   <img width="1907" height="912" alt="Screenshot 2026-08-19 130027" src="https://github.com/user-attachments/assets/072457bf-b4a4-4783-9345-4e83503faa8d" />
   <img width="1906" height="904" alt="Screenshot 2026-08-19 130109" src="https://github.com/user-attachments/assets/d29402f5-0b74-4af6-b40b-627723dd0472" />
   <img width="1902" height="906" alt="Screenshot 2026-08-19 130640" src="https://github.com/user-attachments/assets/b7edca0f-7981-4694-8eaa-1882065bb6db" />
+  <img width="1901" height="906" alt="Screenshot 2026-08-19 134732" src="https://github.com/user-attachments/assets/1aa1ceaf-277d-4b53-9fdd-ea240d5db5a4" />
   <img width="100%" alt="borderless-ochre vercel app_discover_KZ (1)" src="https://github.com/user-attachments/assets/200dbbe5-3981-4c58-8189-5284287aac7a" />
   <img width="1906" height="903" alt="Screenshot 2026-08-19 130702" src="https://github.com/user-attachments/assets/7b8f8317-0bfb-4993-8bd1-c2d771badbe3" />
   <img width="1906" height="1164" alt="borderless-ochre vercel app_requirements" src="https://github.com/user-attachments/assets/a5019ac1-1f4e-46ba-a1c2-ecfaf1d7cf9f" />
