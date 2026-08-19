@@ -205,7 +205,7 @@ export default function FlightApp() {
         {/* LOADING STATE KHI LINK TỪ NGOÀI VÀO TỰ ĐỘNG SEARCH */}
         {loading && step === 'search' && (
           <div className="py-20 text-center text-gray-500 font-medium">
-            Fetching live flight schedules for {urlOrigin?.toUpperCase()} → {urlDest?.toUpperCase()}...
+            Fetching live flight schedules from {params.departure_id} → {params.arrival_id}
           </div>
         )}
 
