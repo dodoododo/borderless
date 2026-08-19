@@ -81,19 +81,21 @@ Structured data (visa rules, statistics, government and economic facts) is deter
 ## Preview
 
 <p align="center">
-  <img src="./docs/screenshots/home.png" alt="BorderLess visa explorer" width="900">
+  <img width="1906" height="911" alt="Screenshot 2026-08-19 125516" src="https://github.com/user-attachments/assets/e2b76af1-bdd3-4677-b4c4-e0339ec332df" />
+  <img width="1909" height="905" alt="Screenshot 2026-08-19 125917" src="https://github.com/user-attachments/assets/3622c596-40e8-4d72-a8ca-7a55c282de42" />
+  <img width="1907" height="912" alt="Screenshot 2026-08-19 130027" src="https://github.com/user-attachments/assets/072457bf-b4a4-4783-9345-4e83503faa8d" />
+  <img width="1906" height="904" alt="Screenshot 2026-08-19 130109" src="https://github.com/user-attachments/assets/d29402f5-0b74-4af6-b40b-627723dd0472" />
+  <img width="1902" height="906" alt="Screenshot 2026-08-19 130640" src="https://github.com/user-attachments/assets/b7edca0f-7981-4694-8eaa-1882065bb6db" />
+  <img width="100%" alt="borderless-ochre vercel app_discover_KZ (1)" src="https://github.com/user-attachments/assets/200dbbe5-3981-4c58-8189-5284287aac7a" />
+  <img width="1906" height="903" alt="Screenshot 2026-08-19 130702" src="https://github.com/user-attachments/assets/7b8f8317-0bfb-4993-8bd1-c2d771badbe3" />
+  <img width="1906" height="1164" alt="borderless-ochre vercel app_requirements" src="https://github.com/user-attachments/assets/a5019ac1-1f4e-46ba-a1c2-ecfaf1d7cf9f" />
+  <img width="1908" height="905" alt="Screenshot 2026-08-19 131254" src="https://github.com/user-attachments/assets/f25c8b4c-91a9-4265-8cff-27f49ed5a773" />
+  <img width="1904" height="894" alt="Screenshot 2026-08-19 131313" src="https://github.com/user-attachments/assets/c37756a7-4651-41c1-92f1-51a75a94dd18" />
+  <img width="1908" height="902" alt="Screenshot 2026-08-19 131351" src="https://github.com/user-attachments/assets/f8fdbc98-4505-48a7-92c2-1e66f7dcb2e1" />
+  <img width="1906" height="2575" alt="borderless-ochre vercel app_discover_CN" src="https://github.com/user-attachments/assets/8a13305a-5dae-4bd7-962e-145c8c6a0760" />
+  <img width="1904" height="898" alt="Screenshot 2026-08-19 131538" src="https://github.com/user-attachments/assets/0a8e04dc-9240-462e-9866-5a5185c7b7b3" />
+  <img width="1906" height="2815" alt="borderless-ochre vercel app_discover_CN (1)" src="https://github.com/user-attachments/assets/0d7e9962-6ea7-4c9e-8049-152c016e5e8b" />
 </p>
-
-Screenshots live under `/docs/screenshots/`. Suggested set:
-
-| Screenshot | Path |
-|---|---|
-| Home / Visa Explorer | `docs/screenshots/home.png` |
-| Passport Rankings | `docs/screenshots/passport-rankings.png` |
-| Country Explorer | `docs/screenshots/country-explorer.png` |
-| Interactive Map | `docs/screenshots/map.png` |
-| Flight Search | `docs/screenshots/flight-search.png` |
-| AI Destination Guide | `docs/screenshots/ai-guide.png` |
 
 ## Data Architecture
 
@@ -207,8 +209,8 @@ Vercel (frontend) · Render (backend)
 ### Clone
 
 ```bash
-git clone https://github.com/your-username/BorderLess-Passport-Website.git
-cd BorderLess-Passport-Website
+git clone https://github.com/dodoododo/borderless.git
+cd borderless
 ```
 
 ### Backend
@@ -241,34 +243,6 @@ npm run dev
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
 VITE_MAPTILER_KEY=your_maptiler_public_key
-```
-
-## Project Structure
-
-A representative structure — not every file is listed:
-
-```
-BorderLess/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── ...
-│   └── ...
-│
-├── backend/
-│   ├── routes/
-│   ├── controllers/
-│   ├── services/
-│   ├── models/
-│   ├── scrapers/
-│   └── ...
-│
-├── docs/
-│   └── screenshots/
-│
-└── README.md
 ```
 
 ## Data Sources & Responsible Use
@@ -307,13 +281,9 @@ Passport rankings, visa requirement exploration, country profiles, the interacti
 
 ## Developer
 
-**Thân Ngọc Hậu**
+**Tăng Ngọc Hậu**
 Junior Full-Stack Developer · Information Technology student at Da Nang University of Science and Technology
 
 Focused on full-stack, data-driven applications — React/TypeScript frontends, Node.js backends, MongoDB-backed data pipelines, interactive geospatial visualization, and AI integration.
 
-[GitHub](YOUR_GITHUB_URL) · [LinkedIn](YOUR_LINKEDIN_URL) · [Portfolio](YOUR_PORTFOLIO_URL)
 
-## License
-
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
