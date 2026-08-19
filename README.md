@@ -6,9 +6,9 @@
 </p>
 
 <p align="center">
-  <a href="YOUR_LIVE_DEMO_URL">Live Demo</a> ·
-  <a href="https://github.com/your-username/BorderLess-Passport-Website">Repository</a> ·
-  <a href="#getting-started">Documentation</a>
+  <a href="https://borderless-ochre.vercel.app/">Live Demo</a> ·
+  <a href="https://github.com/dodoododo/borderless">Repository</a> 
+  <!-- <a href="#getting-started">Documentation</a> -->
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@ It brings together passport strength rankings, visa requirement exploration, cou
   - [Country Explorer](#country-explorer)
   - [Interactive World Map](#interactive-world-map)
   - [Flight Discovery](#flight-discovery)
-  - [AI Destination Guides](#ai-destination-guides)
+  - [Destination Guides](#ai-destination-guides)
 - [Preview](#preview)
 - [Data Architecture](#data-architecture)
 - [System Architecture](#system-architecture)
