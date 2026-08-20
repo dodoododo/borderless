@@ -155,7 +155,7 @@ export function GlobalPower() {
         </div>
 
         {/* Bảng Xếp Hạng */}
-        <div className="max-w-3xl mx-4">
+        <div className="max-w-3xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
               <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
