@@ -257,11 +257,13 @@ const VisaMapComponent = ({ destinationMap, theme }: VisaMapProps) => {
   }
 
   return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
+    <div className="w-full h-[500px] sm:h-full relative flex items-center justify-center overflow-hidden">
       <ReactECharts
         option={option}
         style={{ width: "100%", height: "100%" }}
         opts={{ renderer: "canvas" }}
+        notMerge={true}     
+        lazyUpdate={true}
       />
     </div>
   );

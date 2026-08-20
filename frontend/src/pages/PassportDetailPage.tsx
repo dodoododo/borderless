@@ -451,7 +451,7 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
     : undefined;
 
   return (
-    <div className={`w-full min-h-screen ${palette.pageBg} ${palette.text} flex flex-col font-sans transition-colors duration-500`}>
+    <div className={`w-full ${palette.pageBg} ${palette.text} flex flex-col font-sans transition-colors duration-500`}>
 
       {/* --- MAIN 3-COLUMN GRID --- */}
         <main className="grid grid-cols-1 lg:grid-cols-[18fr_46fr_30fr] items-start">
@@ -653,7 +653,7 @@ export function PassportDetailPage({ theme, setTheme }: PassportDetailPageProps)
         >
           <div style={{ flex: 1.1 }} className={`${palette.mapBg} border ${palette.panelBorder} relative overflow-hidden flex flex-col`}>
             
-            <div className={`absolute inset-0 w-full h-full flex items-center justify-center ${palette.mapInnerBg}`}>
+            <div className={`absolute inset-0 w-full h-full min-h-[500px] flex items-center justify-center ${palette.mapInnerBg}`}>
               <div className={`absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] ${palette.radialFrom} to-transparent pointer-events-none z-0`} />
               
               <div className="w-full h-full z-0">
