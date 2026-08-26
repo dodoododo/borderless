@@ -256,24 +256,26 @@ export default function VisaRequirements() {
     );
 
     return (
-      <div className="relative inline-block align-middle">
+      <div className="relative inline-block align-middle w-full md:w-auto">
         <button
           type="button"
           onClick={() => {
             setOpenDropdown(isOpen ? null : type);
             setSearch("");
           }}
-          className={`flex items-center gap-2.5 border-b-2 transition-all duration-300 pb-1 cursor-pointer outline-none font-serif
+          className={`flex items-center gap-2.5 border-b-2 transition-all duration-300 pb-1 cursor-pointer outline-none font-serif w-full md:w-auto justify-between md:justify-start
             ${isOpen ? 'border-[#1A1A19] text-[#1A1A19]' : 'border-[#D4D3CD] hover:border-[#1A1A19] text-[#1A1A19]'}`}
         >
-          {value ? (
-            <>
-              <span className={`fi fi-${value.toLowerCase()} shrink-0 text-3xl rounded-sm overflow-hidden shadow-lg`} />
-              <span className="font-bold">{getCountryName(value)}</span>
-            </>
-          ) : (
-            <span className="text-[#6E6D67] italic font-light">Select country</span>
-          )}
+          <div className="flex items-center gap-2.5">
+            {value ? (
+              <>
+                <span className={`fi fi-${value.toLowerCase()} shrink-0 text-3xl md:text-3xl rounded-sm overflow-hidden shadow-lg`} />
+                <span className="font-bold truncate max-w-[200px] md:max-w-none">{getCountryName(value)}</span>
+              </>
+            ) : (
+              <span className="text-[#6E6D67] italic font-light">Select country</span>
+            )}
+          </div>
         </button>
 
         <AnimatePresence>
@@ -286,7 +288,7 @@ export default function VisaRequirements() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute top-full left-0 mt-2 w-64 md:w-72 bg-[#FDFBF7] border border-[#E7E5E4] shadow-xl rounded-2xl z-50 overflow-hidden flex flex-col font-sans"
+                className="absolute top-full left-0 mt-2 w-[280px] sm:w-64 md:w-72 bg-[#FDFBF7] border border-[#E7E5E4] shadow-xl rounded-2xl z-50 overflow-hidden flex flex-col font-sans"
               >
                 <div className="p-3 border-b border-[#E7E5E4] bg-white">
                   <div className="">
@@ -301,7 +303,7 @@ export default function VisaRequirements() {
                   </div>
                 </div>
 
-                <div className="max-h-[300px] overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1 bg-white">
+                <div className="max-h-[250px] md:max-h-[300px] overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1 bg-white">
                   {filteredCountries.length === 0 ? (
                     <div className="px-3 py-6 text-center text-sm text-[#A8A6A1] italic">
                       No countries found.
@@ -344,62 +346,62 @@ export default function VisaRequirements() {
   // RENDER GIAO DIỆN
   // ==========================================
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-[#2C2C2A] py-16 pt-5 px-8 font-sans">
-      <div className="mx-auto">
+    <div className="min-h-screen bg-[#FDFBF7] text-[#2C2C2A] py-8 md:py-16 pt-5 px-4 md:px-8 font-sans">
+      <div className="mx-auto max-w-7xl">
         
         <header className="mb-3 flex flex-col items-start">
           {/* Tiêu đề chính */}
-          <h1 className="font-serif text-5xl md:text-5xl lg:text-5xl text-[#1A1A19] tracking-tight leading-[0.95] mb-6 md:mb-1">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-5xl text-[#1A1A19] tracking-tight leading-[1.1] md:leading-[0.95] mb-4 md:mb-6 lg:mb-1">
             Visa Requirements Checker<br className="hidden md:block" />
           </h1>
           <div className="">
-            <p className="text-lg md:text-xl text-[#6E6D67] font-light leading-relaxed max-w-7xl">
+            <p className="text-base md:text-lg lg:text-xl text-[#6E6D67] font-light leading-relaxed max-w-7xl">
               Quickly check if you need a visa for a specific destination. Navigate borders with confidence.
             </p>
           </div>
         </header>
 
         <form onSubmit={handleCheck} className="mb-8">
-          <div className="text-2xl md:text-3xl font-serif leading-loose text-[#1A1A19] flex flex-wrap items-center gap-x-3 gap-y-6">
-            <span>I hold a passport from</span>
+          <div className="text-xl md:text-2xl lg:text-3xl font-serif leading-loose text-[#1A1A19] flex flex-wrap items-center gap-x-3 gap-y-4 md:gap-y-6">
+            <span className="w-full md:w-auto">I hold a passport from</span>
             <CountryDropdown 
               type="passport" 
               value={passport} 
               onChange={setPassport} 
               disabledIso={destination} 
             />
-            <span>and I plan to visit</span>
+            <span className="w-full md:w-auto">and I plan to visit</span>
             <CountryDropdown 
               type="destination" 
               value={destination} 
               onChange={setDestination} 
               disabledIso={passport} 
             />
-            <span>.</span>
+            <span className="hidden md:inline">.</span>
             <button 
                 type="submit"
                 disabled={loading || passport === destination}
-                className="bg-[#7a9b65] hover:bg-[#3D3C3A] text-white px-3 py-2 rounded-xl font-sm transition-all disabled:opacity-50 flex items-center gap-3 shadow-lg shadow-black/5 text-base md:text-xl"
+                className="mt-4 md:mt-0 w-full md:w-auto bg-[#7a9b65] hover:bg-[#3D3C3A] text-white px-4 py-3 md:px-3 md:py-2 rounded-xl font-sm transition-all disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg shadow-black/5 text-base md:text-xl"
             >
-                {loading ? 'Consulting Database...' : 'Check Status'}
-                {!loading && <Search className="w-4 h-4" />}
+                {loading ? 'Consulting...' : 'Check Status'}
+                {!loading && <Search className="w-4 h-4 md:w-5 md:h-5" />}
             </button>
           </div>
         </form>
 
         {error && (
-          <div className="animate-in fade-in duration-500 rounded-3xl p-8 border border-[#E7E5E4] bg-[#F5F5F4] text-[#44403C]">
-            <p className="font-serif text-xl md:text-2xl">{error}</p>
+          <div className="animate-in fade-in duration-500 rounded-3xl p-6 md:p-8 border border-[#E7E5E4] bg-[#F5F5F4] text-[#44403C]">
+            <p className="font-serif text-lg md:text-xl lg:text-2xl">{error}</p>
           </div>
         )}
 
         {/* Kết quả trả về */}
         {result && checkedRoute && !error && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out flex flex-col mt-8">
-            <div className="relative w-full h-[400px] md:h-[360px] rounded-t-[2rem] overflow-hidden shadow-xl flex flex-col md:flex-row border border-black/5">
+            <div className="relative w-full h-[450px] md:h-[360px] rounded-t-[2rem] overflow-hidden shadow-xl flex flex-col md:flex-row border border-black/5">
               
               {/* Nửa Trái: Hộ chiếu (Origin) */}
-              <div className="w-full md:w-1/2 h-1/2 md:h-full relative bg-slate-200">
+              <div className="w-full h-1/2 md:w-1/2 md:h-full relative bg-slate-200">
                 <img 
                   src={result.originCover} 
                   alt={`${getCountryName(checkedRoute.origin)} Landscape`} 
@@ -407,17 +409,17 @@ export default function VisaRequirements() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 
-                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30 text-white flex flex-col gap-3 min-w-[140px]">
-                  <span className={`fi fi-${checkedRoute.origin.toLowerCase()} text-3xl rounded-sm shadow-sm leading-none`} />
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-4 border border-white/30 text-white flex flex-col gap-2 md:gap-3 min-w-[120px] md:min-w-[140px]">
+                  <span className={`fi fi-${checkedRoute.origin.toLowerCase()} text-2xl md:text-3xl rounded-sm shadow-sm leading-none`} />
                   <div>
-                    <div className="font-bold text-lg leading-tight tracking-wide">{getCountryName(checkedRoute.origin)}</div>
-                    <div className="text-xs font-medium opacity-80 mt-1 uppercase tracking-wider">Your Passport</div>
+                    <div className="font-bold text-base md:text-lg leading-tight tracking-wide">{getCountryName(checkedRoute.origin)}</div>
+                    <div className="text-[10px] md:text-xs font-medium opacity-80 mt-1 uppercase tracking-wider">Your Passport</div>
                   </div>
                 </div>
               </div>
 
               {/* Nửa Phải: Điểm đến (Destination) */}
-              <div className="w-full md:w-1/2 h-1/2 md:h-full relative bg-slate-300">
+              <div className="w-full h-1/2 md:w-1/2 md:h-full relative bg-slate-300">
                 <img 
                   src={result.destCover} 
                   alt={`${getCountryName(checkedRoute.dest)} Landscape`} 
@@ -425,78 +427,77 @@ export default function VisaRequirements() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 
-                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30 text-white flex flex-col items-end gap-3 min-w-[140px] text-right">
-                  <span className={`fi fi-${checkedRoute.dest.toLowerCase()} text-3xl rounded-sm shadow-sm leading-none`} />
+                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-4 border border-white/30 text-white flex flex-col items-end gap-2 md:gap-3 min-w-[120px] md:min-w-[140px] text-right">
+                  <span className={`fi fi-${checkedRoute.dest.toLowerCase()} text-2xl md:text-3xl rounded-sm shadow-sm leading-none`} />
                   <div>
-                    <div className="font-bold text-lg leading-tight tracking-wide">{getCountryName(checkedRoute.dest)}</div>
-                    <div className="text-xs font-medium opacity-80 mt-1 uppercase tracking-wider">Destination</div>
+                    <div className="font-bold text-base md:text-lg leading-tight tracking-wide">{getCountryName(checkedRoute.dest)}</div>
+                    <div className="text-[10px] md:text-xs font-medium opacity-80 mt-1 uppercase tracking-wider">Destination</div>
                   </div>
                 </div>
               </div>
 
               {/* Icon Máy bay nối ở giữa */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 z-10 shadow-2xl">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center ${visualTheme[result.type as keyof typeof visualTheme].badge}`}>
-                  <Plane className="w-6 h-6 fill-current" />
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center ${visualTheme[result.type as keyof typeof visualTheme].badge}`}>
+                  <Plane className="w-5 h-5 md:w-6 md:h-6 fill-current" />
                 </div>
               </div>
 
               {/* Badge Báo Trạng thái */}
-              <div className="absolute left-1/2 bottom-0 translate-y-1/2 md:bottom-8 md:translate-y-0 -translate-x-1/2 z-10">
-                <div className={`px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest shadow-xl backdrop-blur-md whitespace-nowrap border-2 border-white ${visualTheme[result.type as keyof typeof visualTheme].badge}`}>
+              <div className="absolute left-1/2 bottom-10 translate-y-1/2 md:bottom-8 md:translate-y-0 -translate-x-1/2 z-10">
+                <div className={`px-6 md:px-8 py-2 md:py-3 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest shadow-xl backdrop-blur-md whitespace-nowrap border-2 border-white ${visualTheme[result.type as keyof typeof visualTheme].badge}`}>
                   {result.status}
                 </div>
               </div>
             </div>
 
             {/* Khối Điều kiện chi tiết & Nút Hành Động (Action Hub) */}
-            <div className=" bg-blue-100/50 rounded-b-[2rem] p-6 md:px-8 py-4 border border-4-[#000000] shadow-xl">
-                <h2 className="font-serif text-3xl md:text-2xl text-[#1A1A19] leading-snug mb-4">
-                    {generateDescription(result.type, getCountryName(checkedRoute.origin), getCountryName(checkedRoute.dest))}
-                    
-                    {result.duration && (
-                    <span className="font-semibold">
-                        {" "}Max stay: {result.duration}
-                    </span>
-                    )}
+            <div className="bg-blue-100/50 rounded-b-[2rem] px-5 pt-10 pb-6 md:px-8 md:py-6 border border-[#000000] shadow-xl">
+                <h2 className="font-serif text-2xl md:text-3xl lg:text-2xl text-[#1A1A19] leading-snug mb-4">
+                  {generateDescription(result.type, getCountryName(checkedRoute.origin), getCountryName(checkedRoute.dest))}
+                  
+                  {result.duration && (
+                  <span className="font-semibold block md:inline mt-1 md:mt-0">
+                    {" "}Max stay: {result.duration}
+                  </span>
+                  )}
                 </h2>
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-1">
-                <h3 className="text-xl font-bold font-cinzel tracking-[0.2em] uppercase text-[#1A1A19] opacity-90">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2 md:mb-1">
+                <h3 className="text-lg md:text-xl font-bold font-cinzel tracking-[0.15em] md:tracking-[0.2em] uppercase text-[#1A1A19] opacity-90">
                   Entry Conditions & Notes
                 </h3>
               </div>
               
               {/* Danh sách Notes (Typography tương phản cao, compact) */}
               {result.notes.length > 0 ? (
-                <div className="grid gap-2.5 mb-10">
+                <div className="grid gap-3 md:gap-2.5 mb-8 md:mb-10">
                   {result.notes.map((note: string, idx: number) => (
-                    <div key={idx} className="flex gap-2 items-start">
+                    <div key={idx} className="flex gap-2.5 md:gap-2 items-start">
                       {/* Dấu chấm custom: Luôn nằm chuẩn ở dòng đầu tiên, không bị lệch */}
-                      <Star className="mt-1.5 w-3.5 h-3.5 text-[#1A1A19] fill-[#1A1A19] shrink-0" />
+                      <Star className="mt-1 md:mt-1.5 w-3.5 h-3.5 text-[#1A1A19] fill-[#1A1A19] shrink-0" />
                       
                       {/* Text: Chữ đen tuyền, thu hẹp khoảng cách chữ và dòng để tạo độ "đanh" */}
-                      <p className="text-[#1A1A19] leading-snug font-medium text-[1.05rem] tracking-tight">
+                      <p className="text-[#1A1A19] leading-relaxed md:leading-snug font-medium text-[0.95rem] md:text-[1.05rem] tracking-tight">
                         {note}
                       </p>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="mb-10 text-[#6E6D67] italic font-light">
+                <div className="mb-8 md:mb-10 text-[#6E6D67] italic font-light text-sm md:text-base">
                   No additional entry conditions specified.
                 </div>
               )}
 
               {/* 3 Nút Điều Hướng Cốt Lõi (Call To Actions) */}
-              <div className="mb-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="mb-2 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                 
                 {/* 1. Nút Đặt vé máy bay (Nổi bật nhất) */}
                 <button 
                   onClick={() => {
-                    // Có thể thêm logic xử lý ở đây nếu muốn
                     navigate(`/book-flight?origin=${encodeURIComponent(getCountryName(checkedRoute.origin))}&dest=${encodeURIComponent(getCountryName(checkedRoute.dest))}`);
                   }}
-                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-6 py-4 rounded-xl font-medium transition-all group cursor-pointer w-full"
+                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-4 py-3.5 md:px-6 md:py-4 rounded-xl font-medium transition-all group cursor-pointer w-full text-sm md:text-base"
                 >
                   <PlaneTakeoff className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
                   <span>Book Flight to {getCountryName(checkedRoute.dest)}</span>
@@ -507,39 +508,27 @@ export default function VisaRequirements() {
                   type="button"
                   onClick={handleViewPassport}
                   disabled={isLoadingPassport}
-                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-6 py-4 rounded-xl font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-4 py-3.5 md:px-6 md:py-4 rounded-xl font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed text-sm md:text-base"
                 >
                   {isLoadingPassport ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <BookOpen className="w-5 h-5" />
                   )}
-                  <span>{getCountryName(checkedRoute.origin)} Passport</span>
+                  <span className="truncate">{getCountryName(checkedRoute.origin)} Passport</span>
                 </button>
 
                 {/* 3. Nút Khám phá Quốc gia */}
                 <a 
                   href={`/discover/${checkedRoute.dest.toLowerCase()}`}
-                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-6 py-4 rounded-xl font-medium transition-colors group"
+                  className="flex items-center justify-center gap-2.5 border border-slate-500 bg-[#F5F5F4] hover:bg-[#1A1A19] text-[#1A1A19] hover:text-white px-4 py-3.5 md:px-6 md:py-4 rounded-xl font-medium transition-colors group text-sm md:text-base"
                 >
                   <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
-                  <span>Explore {getCountryName(checkedRoute.dest)}</span>
+                  <span className="truncate">Explore {getCountryName(checkedRoute.dest)}</span>
                 </a>
 
               </div>
             </div>
-
-            {/* Nút Khám phá */}
-            {/* <div className="mt-6 flex justify-end">
-              <a 
-                href={`/discover/${checkedRoute.dest.toLowerCase()}`}
-                className="group flex items-center gap-3 text-lg font-serif text-[#6E6D67] hover:text-[#1A1A19] transition-colors"
-              >
-                <i>Explore {getCountryName(checkedRoute.dest)}</i>
-                <span className="w-12 h-[1px] bg-[#D4D3CD] group-hover:bg-[#1A1A19] transition-all duration-300"></span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div> */}
 
           </div>
         )}

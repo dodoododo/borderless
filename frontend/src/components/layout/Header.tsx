@@ -333,14 +333,14 @@ export function Header({ theme, setTheme }: HeaderProps) {
           >
             {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
           </motion.div>
-        </button>
+        </button> */}
 
         <button 
           className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/5 text-foreground transition-transform hover:scale-105 active:scale-95 lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-        </button> */}
+        </button>
       </div>
 
       {/* Mobile Dropdown Menu */}
@@ -351,7 +351,7 @@ export function Header({ theme, setTheme }: HeaderProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute left-4 right-4 top-20 rounded-2xl border border-border/50 bg-background/95 p-4 shadow-2xl backdrop-blur-xl lg:hidden"
+            className="absolute left-4 right-4 top-20 rounded-2xl border border-border/50 bg-background p-4 shadow-2xl backdrop-blur-xl lg:hidden"
           >
             <nav className="flex flex-col gap-2">
               {navItems.map((item) => {

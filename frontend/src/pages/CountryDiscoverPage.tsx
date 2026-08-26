@@ -432,17 +432,17 @@ export default function CountryDiscover() {
       <style>{CSS}</style>
 
       {/* HERO */}
-      <header className="relative mx-auto pb-8">
+      <header className="relative mx-auto pb-4 md:pb-8">
         {/* SỬA CHÍNH TẠI ĐÂY: 
             1. Đổi h-[46vh] md:h-[58vh] thành min-h-[46vh] md:min-h-[58vh]
             2. Thêm pt-28 md:pt-32 để tạo vùng an toàn, không bị đè lên nút Back 
         */}
-        <div className="relative w-full overflow-hidden shadow-xl bg-slate-900 min-h-[46vh] md:min-h-[50vh] flex items-end p-8 pt-28 md:p-10 md:pt-16 group">
+        <div className="relative w-full overflow-hidden shadow-xl bg-slate-900 min-h-[55vh] sm:min-h-[46vh] md:min-h-[50vh] flex flex-col md:flex-row items-start md:items-end p-6 pt-24 md:p-10 md:pt-16 group">
           
           <button
             onClick={() => navigate('/discover')}
             aria-label="Back to countries"
-            className="absolute top-6 left-6 z-20 w-11 h-11 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black/50 hover:border-white/40 transition-all"
+            className="absolute top-4 left-4 md:top-6 md:left-6 z-20 w-10 h-10 md:w-11 md:h-11 rounded-full bg-black/40 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-black/60 hover:border-white/40 transition-all"
           >
             <Icon name="arrowLeft" className="w-5 h-5" />
           </button>
@@ -450,23 +450,26 @@ export default function CountryDiscover() {
           {d.coverImageUrl && (
             <img src={d.coverImageUrl} alt="Cover" className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-101 transition-all duration-1000" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-accent-raw via-slate-900/40 to-transparent pointer-events-none mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-raw via-slate-900/60 md:via-slate-900/40 to-transparent pointer-events-none mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 md:via-slate-900/30 to-transparent pointer-events-none" />
 
-          <div className="relative z-10 w-full flex items-end justify-between flex-wrap gap-8">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-accent-raw text-white px-3 py-1 rounded-sm font-data text-[12px] tracking-widest uppercase font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
+          {/* Wrapper chia 2 cột trên Desktop, xếp dọc trên Mobile */}
+          <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-start md:items-end justify-end md:justify-between gap-6 md:gap-8 mt-auto pt-10">
+            
+            {/* THÔNG TIN QUỐC GIA */}
+            <div className="flex-1 w-full order-2 md:order-1">
+              <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2 md:mb-2">
+                <span className="bg-accent-raw text-white px-2 py-1 md:px-3 md:py-1 rounded-sm font-data text-[10px] md:text-[12px] tracking-widest uppercase font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
                   {core.region}
                 </span>
-                <span className="bg-accent-raw text-white px-3 py-1 rounded-sm font-data text-[12px] tracking-widest uppercase font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
+                <span className="bg-accent-raw text-white px-2 py-1 md:px-3 md:py-1 rounded-sm font-data text-[10px] md:text-[12px] tracking-widest uppercase font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
                   {core.subregion}
                 </span>
-                <span className="text-white font-data text-[13px] tracking-[0.2em] ml-2 drop-shadow-sm [text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]">
+                <span className="text-white font-data text-[11px] md:text-[13px] tracking-[0.2em] ml-1 md:ml-2 drop-shadow-sm [text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]">
                   {core.iso2} • {core.iso3}
                 </span>
               </div>
-              <h1 className="font-display text-5xl md:text-[80px] font-black text-white leading-none tracking-tight mb-2 drop-shadow-lg">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-[80px] font-black text-white leading-[1.1] md:leading-none tracking-tight mb-1 md:mb-2 drop-shadow-lg">
                 {core.nameCommon}
               </h1>
               {(() => {
@@ -481,38 +484,37 @@ export default function CountryDiscover() {
 
                 // Nếu có giá trị (subNames khác rỗng) thì mới render thẻ h2
                 return subNames ? (
-                  <h2 className="font-display text-2xl text-white/80 max-w-2xl drop-shadow-md">
+                  <h2 className="font-display text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl drop-shadow-md">
                     {subNames}
                   </h2>
                 ) : null;
               })()}
-              <h3 className="font-display text-xl text-white/80 max-w-2xl drop-shadow-md mt-2">
+              <h3 className="font-display text-base sm:text-lg md:text-xl text-white/80 max-w-2xl drop-shadow-md mt-1 md:mt-2">
                 {d.etymology}
               </h3>
             </div>
 
-            {/* KHỐI CỜ VÀ CHÚ THÍCH Ở GÓC TRÊN BÊN PHẢI */}
-            <div className="flex flex-col items-end shrink-0 max-w-2xl">
-              {/* 1. Xóa các class fix cứng (h-full), xóa border, xóa overflow-hidden ở div cha */}
-              <div className="mb-4 shrink-0 flex items-center justify-center h-[120px] md:h-[150px]">
-                
+            {/* KHỐI CỜ VÀ CHÚ THÍCH Ở GÓC TRÊN BÊN PHẢI (Desktop) / NẰM GIỮA/TRÁI (Mobile) */}
+            <div className="flex flex-col items-start md:items-end shrink-0 w-full md:max-w-2xl order-1 md:order-2">
+              
+              <div className="mb-3 md:mb-4 shrink-0 flex items-center justify-start md:justify-center h-[90px] md:h-[150px]">
                 <img 
                   src={core.flag.svgUrl} 
                   alt={`Flag of ${core.iso2}`} 
-                  /* 2. Ép ảnh phải cao 100% (h-full) theo thằng cha, chiều ngang tự động scale (w-auto) */
-                  className="h-full max-w-[300px] md:max-w-[350px] object-contain [filter:drop-shadow(0px_0px_1px_rgba(0,0,0,0.4))_drop-shadow(0px_2px_4px_rgba(0,0,0,0.15))]"
+                  className="h-full max-w-[200px] md:max-w-[350px] object-contain [filter:drop-shadow(0px_0px_1px_rgba(0,0,0,0.4))_drop-shadow(0px_2px_4px_rgba(0,0,0,0.15))]"
                 />
-                
               </div>
+
               {/* Chú thích lá cờ nằm ngay bên dưới */}
               {core.flag.description && (
-                <div className="bg-white/90 backdrop-blur-md p-5 rounded-xs border border-slate-200/60 shadow-lg text-right">
-                  <p className="font-ui text-md text-slate-700 leading-relaxed italic">
+                <div className="bg-white/95 md:bg-white/90 backdrop-blur-md p-3 md:p-5 rounded-xs border border-slate-200/60 shadow-lg text-left md:text-right w-full md:w-auto">
+                  <p className="font-ui text-[13px] md:text-md text-slate-700 leading-relaxed md:leading-relaxed italic line-clamp-3 md:line-clamp-none">
                     {core.flag.description}
                   </p>
                 </div>
               )}
             </div>
+            
           </div>
         </div>
       </header>

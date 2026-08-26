@@ -553,12 +553,6 @@ export function WorldMap({
         )}
       </div>
 
-      {/* ===================================================================== */}
-      {/* 🚀 TOOLTIP CHÍNH THỨC (PORTAL ĐÃ FIX XUNG ĐỘT ANIMATION) */}
-      {/* ===================================================================== */}
-      {/* ===================================================================== */}
-      {/* 🚀 TOOLTIP NGHỆ THUẬT (ORGANIC, EDITORIAL & PERSONAL STYLE) */}
-      {/* ===================================================================== */}
       {typeof document !== 'undefined' && createPortal(
         <AnimatePresence>
           {tooltipInfo && tooltipInfo.visible && (
@@ -593,26 +587,26 @@ export function WorldMap({
                   return (
                     <>
                       {/* Dải màu Đánh dấu dọc mép trái (như File Folder Tab) */}
-                      <div className="absolute top-0 left-0 bottom-0 w-1.5" style={{ backgroundColor: sColor }} />
+                      <div className="absolute top-0 left-0 bottom-0 w-1 md:w-1.5" style={{ backgroundColor: sColor }} />
                       
-                      <div className="pl-5 pr-4 py-4">
+                      <div className="pl-3 pr-2 py-2 md:pl-5 md:pr-4 md:py-4">
                         {/* 1. Header: Cờ & Tên Quốc gia */}
-                        <div className="flex items-start gap-3 mb-3">
+                        <div className="flex items-start gap-2 md:gap-3 mb-2 md:mb-3">
                           <span 
-                            className={`fi fi-${tooltipInfo.iso} text-3xl shrink-0 !bg-cover !bg-center overflow-hidden border border-black/20 shadow-sm`} 
+                            className={`fi fi-${tooltipInfo.iso} text-2xl md:text-3xl shrink-0 !bg-cover !bg-center overflow-hidden border border-black/20 shadow-sm`} 
                             style={{ borderRadius: '1px' }} 
                           />
-                          <div className="flex flex-col pt-0.5">
-                            <h4 className="font-semibold text-[18px] leading-none font-display tracking-tight">
+                          <div className="flex flex-col pt-0 md:pt-0.5">
+                            <h4 className="font-semibold text-[15px] md:text-[18px] leading-none font-display tracking-tight">
                               {tooltipInfo.countryName}
                             </h4>
                           </div>
                         </div>
 
                         {/* 2. Visa Status Badge (Kiểu in tem mực) */}
-                        <div className="mb-3">
+                        <div className="mb-2 md:mb-3">
                           <span 
-                            className="inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest border"
+                            className="inline-block px-1 py-[1px] md:px-1.5 md:py-0.5 text-[9px] md:text-[10px] font-bold uppercase tracking-widest border"
                             style={{ 
                               color: sColor, 
                               borderColor: sColor, 
@@ -624,17 +618,17 @@ export function WorldMap({
                         </div>
 
                         {/* 3. Câu diễn giải (Serif font mộc mạc) */}
-                        <p className={`text-[14px] leading-relaxed font-serif ${theme === 'dark' ? 'text-stone-300' : 'text-stone-700'}`}>
+                        <p className={`text-[12px] md:text-[14px] leading-relaxed font-serif ${theme === 'dark' ? 'text-stone-300' : 'text-stone-700'}`}>
                           {generateVisaSentence(homeRef.current, tooltipInfo.countryName, tooltipInfo.parsed.category, tooltipInfo.parsed.days)}
                         </p>
 
                         {/* 4. Note / Phụ chú (Giao diện đánh máy) */}
                         {tooltipInfo.parsed.note && (
-                          <div className={`mt-3.5 pt-2.5 border-t border-dashed ${theme === 'dark' ? 'border-stone-700 text-stone-400' : 'border-stone-300 text-stone-600'}`}>
-                            <span className="block text-[9px] font-bold uppercase tracking-[0.2em] mb-1.5 opacity-60">
+                          <div className={`mt-2 pt-1.5 md:mt-3.5 md:pt-2.5 border-t border-dashed ${theme === 'dark' ? 'border-stone-700 text-stone-400' : 'border-stone-300 text-stone-600'}`}>
+                            <span className="block text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] mb-1 md:mb-1.5 opacity-60">
                               Remarks / Notes
                             </span>
-                            <div className=" text-[14px] leading-[1.6]">
+                            <div className="text-[12px] md:text-[14px] leading-[1.6]">
                               {tooltipInfo.parsed.note}
                             </div>
                           </div>
@@ -652,11 +646,11 @@ export function WorldMap({
 
       {/* BẢNG CHÚ THÍCH MÀU SẮC */}
       {Object.keys(countryColors).length > 0 && (
-        <div className={`absolute bottom-18 left-4 z-10 p-4 rounded-sm backdrop-blur-md border shadow-lg transition-colors ${
+        <div className={`absolute bottom-12 md:bottom-18 left-2 md:left-4 z-10 p-2.5 md:p-4 rounded-sm backdrop-blur-md border shadow-lg transition-colors ${
           theme === 'dark' ? 'bg-[#020617]/70 border-white/10 text-white' : 'bg-white/80 border-gray-200 text-gray-800'
         }`}>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-3">Visa Status</h4>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+          <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-widest mb-2 md:mb-3">Visa Status</h4>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 md:gap-x-4 md:gap-y-2">
             {[
               { label: 'Visa-free', color: '#10b981' },
               { label: 'Visa on arrival', color: '#f59e0b' },
@@ -665,8 +659,8 @@ export function WorldMap({
               { label: 'Visa required', color: '#64748b' },
               { label: 'No admission', color: '#f43f5e' },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-[11px] font-medium">
-                <span className="w-3 h-3 shadow-[0_0_8px_rgba(0,0,0,0.2)]" style={{ backgroundColor: item.color }} />
+              <div key={item.label} className="flex items-center gap-1.5 md:gap-2 text-[9px] md:text-[11px] font-medium">
+                <span className="w-2 h-2 md:w-3 md:h-3 shadow-[0_0_8px_rgba(0,0,0,0.2)]" style={{ backgroundColor: item.color }} />
                 {item.label}
               </div>
             ))}
@@ -674,15 +668,15 @@ export function WorldMap({
         </div>
       )}
 
-      <div className={`absolute bottom-4 left-4 z-10 px-3 py-1.5 rounded-sm text-base font-mono font-bold backdrop-blur-md shadow-sm border transition-colors ${
+      <div className={`absolute bottom-2 md:bottom-4 left-2 md:left-4 z-10 px-2 md:px-3 py-1 md:py-1.5 rounded-sm text-[10px] md:text-base font-mono font-bold backdrop-blur-md shadow-sm border transition-colors ${
         theme === 'dark' ? 'bg-black/50 border-white/10 text-white/80' : 'bg-white/70 border-gray-200 text-gray-900'
       }`}>
         Zoom: x{currentZoom.toFixed(2)}
       </div>
 
       {/* BẢNG ĐIỀU KHIỂN */}
-      <div className="absolute top-6 left-6 z-10 flex flex-col gap-4 items-start">
-        <div className={`group gap-2 flex p-1.5 rounded-sm backdrop-blur-2xl shadow-lg border transition-all duration-500 w-fit ${
+      <div className="absolute top-3 md:top-6 left-2 md:left-6 z-10 flex flex-col gap-2 md:gap-4 items-start">
+        <div className={`group gap-1 md:gap-2 flex p-1 md:p-1.5 rounded-sm backdrop-blur-2xl shadow-lg border transition-all duration-500 w-fit ${
           theme === 'dark' ? 'bg-[#020617]/40 border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)]' : 'bg-white/70 border-white/50 shadow-[0_12px_40px_rgba(0,0,0,0.08)]'
         }`}>
           {(['globe', 'flat'] as const).map((proj) => {
@@ -691,12 +685,12 @@ export function WorldMap({
               <button
                 key={proj}
                 onClick={() => handleProjectionChange(proj)}
-                className={`flex items-center justify-start rounded-sm p-2.5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                className={`flex items-center justify-start rounded-sm p-1.5 md:p-2.5 text-[11px] md:text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
                   isActive ? (theme === 'dark' ? 'bg-white text-black shadow-sm' : 'bg-gray-900 text-white shadow-md')
                            : `hover:bg-gray-500/10 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
                 }`}
               >
-                {proj === 'globe' ? <Globe className="w-4 h-4 shrink-0" /> : <Map className="w-4 h-4 shrink-0" />}
+                {proj === 'globe' ? <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" /> : <Map className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />}
                 <span className="overflow-hidden whitespace-nowrap max-w-0 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:max-w-[120px] group-hover:opacity-100 group-hover:pl-2.5">
                   {proj === 'globe' ? '3D Globe' : '2D Map'}
                 </span>
@@ -705,23 +699,23 @@ export function WorldMap({
           })}
         </div>
 
-        <div className={`group grid grid-cols-3 gap-1.5 p-1.5 rounded-sm backdrop-blur-2xl shadow-lg border transition-all duration-500 w-fit ${
+        <div className={`group grid grid-cols-3 gap-1 md:gap-1.5 p-1 md:p-1.5 rounded-sm backdrop-blur-2xl shadow-lg border transition-all duration-500 w-fit ${
           theme === 'dark' ? 'bg-[#020617]/40 border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)]' : 'bg-white/70 border-white/50 shadow-[0_12px_40px_rgba(0,0,0,0.08)]'
         }`}>
           {[
-            { id: 'voyager', icon: <Compass className="w-4 h-4 shrink-0" />, label: 'Standard' },
-            { id: 'streets', icon: <Route className="w-4 h-4 shrink-0" />, label: 'Streets' },
-            { id: 'bright', icon: <Sun className="w-4 h-4 shrink-0" />, label: 'Light' },
-            { id: 'topo', icon: <Mountain className="w-4 h-4 shrink-0" />, label: 'Terrain' },
-            { id: 'satellite', icon: <Satellite className="w-4 h-4 shrink-0" />, label: 'Satellite' },
-            { id: 'outdoor', icon: <TreePine className="w-4 h-4 shrink-0" />, label: 'Outdoors' }
+            { id: 'voyager', icon: <Compass className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Standard' },
+            { id: 'streets', icon: <Route className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Streets' },
+            { id: 'bright', icon: <Sun className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Light' },
+            { id: 'topo', icon: <Mountain className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Terrain' },
+            { id: 'satellite', icon: <Satellite className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Satellite' },
+            { id: 'outdoor', icon: <TreePine className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />, label: 'Outdoors' }
           ].map((style) => {
             const isActive = mapStyle === style.id;
             return (
               <button
                 key={style.id}
                 onClick={() => handleStyleChange(style.id)}
-                className={`flex items-center justify-start rounded-sm p-2.5 text-xs font-bold tracking-wide transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                className={`flex items-center justify-start rounded-sm p-1.5 md:p-2.5 text-[9px] md:text-xs font-bold tracking-wide transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
                   isActive ? (theme === 'dark' ? 'bg-white text-black shadow-sm' : 'bg-gray-900 text-white shadow-md')
                            : `hover:bg-gray-500/10 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
                 }`}

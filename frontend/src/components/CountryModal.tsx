@@ -436,7 +436,7 @@ export function CountryModal({ iso, isOpen, onClose }: CountryModalProps) {
             <article>
               {/* ---------------- HERO / IDENTITY ---------------- */}
               <header className="px-6 sm:px-10 pt-10 sm:pt-5 pb-8 sm:pb-5 border-b border-neutral-400">
-                <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start sm:gap-12">
+                <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:gap-12">
                   <div className="flex-1 min-w-0 sm:flex-[1_1_60%]">
                     <h1 id="cm-heading" className="font-display font-medium text-[44px] sm:text-[58px] leading-[1.02] tracking-tight text-slate-900 mb-3.5">
                       {c.nameCommon}
@@ -467,20 +467,21 @@ export function CountryModal({ iso, isOpen, onClose }: CountryModalProps) {
 
                   </div>
 
-                  <div className="flex flex-col items-end sm:items-end justify-end gap-4 flex-shrink-0">
+                  {/* VÙNG CHỨA CỜ VÀ NÚT BẤM ĐÃ ĐƯỢC RESPONSIVE */}
+                  <div className="flex flex-col items-start sm:items-end justify-start sm:justify-end gap-5 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
                     
-                    {/* Lá cờ */}
-                    <div className="w-[220px] h-[147px] sm:w-[260px] sm:h-[173px] flex items-end justify-end">
+                    {/* Lá cờ: Thu nhỏ trên mobile (140x93), căn trái. Máy tính giữ nguyên (260x173), căn phải */}
+                    <div className="w-[140px] h-[93px] sm:w-[260px] sm:h-[173px] flex items-start justify-start sm:items-end sm:justify-end">
                       <img src={c.flag.svgUrl} alt={`Flag of ${c.nameCommon}`} className="max-w-full max-h-full object-contain block border border-[color:var(--cm-accent-border)] bg-neutral-50 shadow-sm" />
                     </div>
 
-                    {/* Nút bấm (Được set width bằng đúng width của lá cờ để nhìn vuông vắn) */}
+                    {/* Nút bấm: Trải full màn hình (w-full) trên mobile. Máy tính giữ nguyên w-[300px] */}
                     <button
                       onClick={() => {
                         onClose(); 
                         navigate(`/discover/${c.iso2.toLowerCase()}`); 
                       }}
-                      className="group flex items-center justify-center w-[220px] sm:w-[300px] gap-2.5 px-2 py-3.5 bg-[color:var(--cm-accent-raw)] text-white font-data text-[12px] uppercase tracking-[0.1em] font-bold rounded-[4px] shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_16px_-4px_var(--cm-accent-border)] active:scale-[0.98] active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:var(--cm-accent-raw)]"
+                      className="group flex items-center justify-center w-full sm:w-[300px] gap-2.5 px-2 py-3.5 sm:py-3.5 bg-[color:var(--cm-accent-raw)] text-white font-data text-[12px] uppercase tracking-[0.1em] font-bold rounded-[4px] shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_16px_-4px_var(--cm-accent-border)] active:scale-[0.98] active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:var(--cm-accent-raw)]"
                     >
                       <Compass size={16} strokeWidth={2.5} className="opacity-90" />
                       VIEW FULL PROFILE

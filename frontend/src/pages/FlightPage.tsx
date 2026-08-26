@@ -37,18 +37,6 @@ export default function FlightApp() {
   const [selectedOutbound, setSelectedOutbound] = useState<FlightOption | null>(null);
   const [selectedReturn, setSelectedReturn] = useState<FlightOption | null>(null);
 
-  // 🚀 TỰ ĐỘNG TRIGGER TÌM KIẾM KHI USER TRUY CẬP TỪ URL CÓ ?origin=...&dest=...
-  // useEffect(() => {
-  //   if (urlOrigin && urlDest && step === 'search') {
-  //     const autoSearchParams: FlightSearchParams = {
-  //       ...params,
-  //       departure_id: urlOrigin.toUpperCase(),
-  //       arrival_id: urlDest.toUpperCase(),
-  //     };
-  //     handleSearch(autoSearchParams);
-  //   }
-  // }, [urlOrigin, urlDest]);
-
   // Safeguard: Nếu user f5 ở bước giữa mà mất data
   useEffect(() => {
     if (step === 'outbound' && outboundFlights.length === 0 && !loading && !urlOrigin) {
@@ -144,8 +132,8 @@ export default function FlightApp() {
       <div 
         className={`transition-all duration-500 ease-in-out ${
           step === 'search' 
-            ? 'pt-16' 
-            : 'py-6 shadow-sm sticky top-0 bg-white z-20 border-b border-gray-200'
+            ? 'pt-8 md:pt-16' 
+            : 'py-4 md:py-6 shadow-sm sticky top-0 bg-white z-20 border-b border-gray-200'
         }`}
       >
         {/* Background Gradient mờ ảo (Chỉ hiện ở màn hình Search chính) */}
@@ -156,28 +144,16 @@ export default function FlightApp() {
           </div>
         )}
 
-        <div className={`mx-auto px-4 relative z-10 ${step === 'search' ? 'px-30' : 'max-w-[1440px]'}`}>
-          
-          {/* Tiêu đề lớn */}
-          {/* {step === 'search' && (
-            <div className="text-center mb-10 md:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <h1 className="text-4xl md:text-[56px] leading-tight font-medium text-gray-900 mb-4 tracking-tight">
-                Flights
-              </h1>
-              <p className="text-base md:text-lg text-gray-500">
-                Discover your next dream destination with the best flight deals.
-              </p>
-            </div>
-          )} */}
+        <div className={`mx-auto relative z-10 ${step === 'search' ? 'px-2 sm:px-4 md:px-24 lg:px-32 xl:px-40' : 'px-3 md:px-4 max-w-[1440px]'}`}>
           
           {/* Bọc SearchForm trong một khung nổi bật khi ở màn hình chính */}
           <div className={`${
             step === 'search' 
-              ? 'bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-2 md:p-4' 
+              ? 'bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-3 md:p-4' 
               : ''
           }`}>
             { step === 'search' ? 
-              <h1 className="text-2xl md:text-[30px] leading-tight font-medium text-gray-900 mb-4 tracking-tight">
+              <h1 className="text-2xl md:text-[30px] leading-tight font-medium text-gray-900 mb-4 tracking-tight pl-1 md:pl-0">
                 Book Flights
               </h1> : 
               ''
@@ -195,16 +171,16 @@ export default function FlightApp() {
         </div>
       </div>
 
-      <main className="w-full max-w-[1440px] mx-auto px-4 py-8">
+      <main className="w-full max-w-[1440px] mx-auto px-3 md:px-4 py-6 md:py-8">
         {error && (
-          <div className="mb-6 p-4 border border-[#FAD2CF] bg-[#FCE8E6] text-[#A50E0E] rounded-md text-[15px]">
+          <div className="mb-6 p-3 md:p-4 border border-[#FAD2CF] bg-[#FCE8E6] text-[#A50E0E] rounded-md text-[14px] md:text-[15px]">
             {error}
           </div>
         )}
 
         {/* LOADING STATE KHI LINK TỪ NGOÀI VÀO TỰ ĐỘNG SEARCH */}
         {loading && step === 'search' && (
-          <div className="py-20 text-center text-gray-500 font-medium">
+          <div className="py-20 text-center text-gray-500 font-medium px-4">
             Fetching live flight schedules from {params.departure_id} → {params.arrival_id}
           </div>
         )}
@@ -220,25 +196,17 @@ export default function FlightApp() {
         )}
 
         {step === 'return' && (
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="flex-1">
-              <FlightResultsPage 
-                title={`Choose a return flight to ${params.departure_id}`}
-                flights={returnFlights} 
-                loading={loading} 
-                onSelect={handleSelectReturn} 
-              />
-            </div>
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             
-            {/* SIDEBAR: YOUR SELECTION CHI TIẾT CHIỀU ĐI */}
-            <div className="w-full lg:w-96 shrink-0">
-              <div className="sticky top-32 border border-gray-300 bg-white rounded-none p-6 shadow-sm">
+            {/* SIDEBAR: YOUR SELECTION CHI TIẾT CHIỀU ĐI (Đưa lên trên ở Mobile) */}
+            <div className="w-full lg:w-96 shrink-0 order-1 lg:order-2">
+              <div className="static lg:sticky top-32 border border-gray-300 bg-white rounded-xl lg:rounded-none p-4 lg:p-6 shadow-sm">
                 
-                <div className="flex items-center justify-between pb-4 border-b border-gray-200 mb-5">
-                  <h3 className="text-[12px] font-bold text-gray-500 uppercase tracking-widest">
+                <div className="flex items-center justify-between pb-3 lg:pb-4 border-b border-gray-200 mb-4 lg:mb-5">
+                  <h3 className="text-[11px] lg:text-[12px] font-bold text-gray-500 uppercase tracking-widest">
                     Your Selection
                   </h3>
-                  <span className="text-[12px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 border border-emerald-200 uppercase">
+                  <span className="text-[11px] lg:text-[12px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 border border-emerald-200 uppercase">
                     Outbound Flight
                   </span>
                 </div>
@@ -249,44 +217,44 @@ export default function FlightApp() {
                   const stops = selectedOutbound.flights.length - 1;
 
                   return (
-                    <div className="space-y-5">
+                    <div className="space-y-4 lg:space-y-5">
                       <div>
-                        <div className="text-[13px] text-gray-500 font-medium uppercase tracking-wider">Route</div>
-                        <div className="text-[16px] font-bold text-gray-900 mt-0.5 flex items-center gap-2">
+                        <div className="text-[12px] lg:text-[13px] text-gray-500 font-medium uppercase tracking-wider">Route</div>
+                        <div className="text-[15px] lg:text-[16px] font-bold text-gray-900 mt-0.5 flex items-center gap-2">
                           <span>{firstSeg.departure_airport.id}</span>
                           <span className="text-gray-400 font-normal">→</span>
                           <span>{lastSeg.arrival_airport.id}</span>
-                          <span className="text-xs text-gray-500 font-normal ml-auto">{params.outbound_date}</span>
+                          <span className="text-[11px] lg:text-xs text-gray-500 font-normal ml-auto">{params.outbound_date}</span>
                         </div>
                       </div>
 
-                      <div className="p-4 bg-gray-50 border border-gray-200">
-                        <div className="flex items-center gap-3 mb-3">
-                          <img src={firstSeg.airline_logo} alt="Airline" className="w-6 h-6 object-contain" />
+                      <div className="p-3 lg:p-4 bg-gray-50 border border-gray-200 rounded-lg lg:rounded-none">
+                        <div className="flex items-center gap-2 lg:gap-3 mb-3">
+                          <img src={firstSeg.airline_logo} alt="Airline" className="w-5 h-5 lg:w-6 lg:h-6 object-contain" />
                           <div>
-                            <div className="text-[13px] font-semibold text-gray-900">{firstSeg.airline}</div>
-                            <div className="text-[11px] font-mono text-gray-500">{firstSeg.flight_number}</div>
+                            <div className="text-[12px] lg:text-[13px] font-semibold text-gray-900">{firstSeg.airline}</div>
+                            <div className="text-[10px] lg:text-[11px] font-mono text-gray-500">{firstSeg.flight_number}</div>
                           </div>
                         </div>
 
-                        <div className="flex justify-between items-center text-[14px] text-gray-900 font-medium pt-3 border-t border-gray-200">
+                        <div className="flex justify-between items-center text-[13px] lg:text-[14px] text-gray-900 font-medium pt-3 border-t border-gray-200">
                           <div>
-                            <span className="text-lg font-bold">{firstSeg.departure_airport.time.split(' ')[1]}</span>
-                            <div className="text-[11px] text-gray-500 font-normal">{firstSeg.departure_airport.id}</div>
+                            <span className="text-base lg:text-lg font-bold">{firstSeg.departure_airport.time.split(' ')[1]}</span>
+                            <div className="text-[10px] lg:text-[11px] text-gray-500 font-normal">{firstSeg.departure_airport.id}</div>
                           </div>
                           
                           <div className="text-center">
-                            <div className="text-[11px] text-gray-400 uppercase">{stops === 0 ? 'Direct' : `${stops} stop`}</div>
-                            <div className="w-12 h-[1px] bg-gray-300 my-1 mx-auto"></div>
-                            <div className="text-[11px] text-gray-500">{Math.floor(selectedOutbound.total_duration / 60)}h {selectedOutbound.total_duration % 60}m</div>
+                            <div className="text-[10px] lg:text-[11px] text-gray-400 uppercase">{stops === 0 ? 'Direct' : `${stops} stop`}</div>
+                            <div className="w-10 lg:w-12 h-[1px] bg-gray-300 my-1 mx-auto"></div>
+                            <div className="text-[10px] lg:text-[11px] text-gray-500">{Math.floor(selectedOutbound.total_duration / 60)}h {selectedOutbound.total_duration % 60}m</div>
                           </div>
 
                           <div className="text-right">
-                            <span className="text-lg font-bold">
+                            <span className="text-base lg:text-lg font-bold">
                               {lastSeg.arrival_airport.time.split(' ')[1]}
                               {lastSeg.overnight && <sup className="text-[10px] text-red-600 ml-0.5">+1</sup>}
                             </span>
-                            <div className="text-[11px] text-gray-500 font-normal">{lastSeg.arrival_airport.id}</div>
+                            <div className="text-[10px] lg:text-[11px] text-gray-500 font-normal">{lastSeg.arrival_airport.id}</div>
                           </div>
                         </div>
                       </div>
@@ -297,13 +265,23 @@ export default function FlightApp() {
               </div>
             </div>
 
+            {/* LIST: Chọn chiều về (Nằm dưới trên Mobile, bên trái trên Desktop) */}
+            <div className="flex-1 order-2 lg:order-1">
+              <FlightResultsPage 
+                title={`Choose a return flight to ${params.departure_id}`}
+                flights={returnFlights} 
+                loading={loading} 
+                onSelect={handleSelectReturn} 
+              />
+            </div>
+
           </div>
         )}
 
         {step === 'booking' && (
           <>
             {loading ? (
-              <div className="text-[#5F6368] py-20 text-[15px] text-center">Contacting booking providers...</div>
+              <div className="text-[#5F6368] py-20 text-[14px] md:text-[15px] text-center px-4">Contacting booking providers...</div>
             ) : (
               <BookingPage bookingData={bookingData} itinerary={{outbound: selectedOutbound, return: selectedReturn}} onReset={startOver} />
             )}
