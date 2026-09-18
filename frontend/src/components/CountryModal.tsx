@@ -339,19 +339,19 @@ export function CountryModal({ iso, isOpen, onClose }: CountryModalProps) {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    const header = document.querySelector('header'); // Hoặc đổi thành class header của bác: document.querySelector('.nav-bar')
+  // useEffect(() => {
+  //   const header = document.querySelector('header'); // Hoặc đổi thành class header của bác: document.querySelector('.nav-bar')
 
-    if (isOpen && header) {
-      header.classList.add('nav-hidden');
-    }
+  //   if (isOpen && header) {
+  //     header.classList.add('nav-hidden');
+  //   }
 
-    return () => {
-      if (header) {
-        header.classList.remove('nav-hidden');
-      }
-    };
-  }, [isOpen]);
+  //   return () => {
+  //     if (header) {
+  //       header.classList.remove('nav-hidden');
+  //     }
+  //   };
+  // }, [isOpen]);
 
   const c = country;
 
