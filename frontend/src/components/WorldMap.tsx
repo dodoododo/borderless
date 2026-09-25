@@ -44,8 +44,8 @@ const COLOR_MAPPING: Record<string, { dark: string; light: string }> = {
   "visa-required": { dark: "#475569", light: "#64748b" },  // Xám Slate
   "restricted": { dark: "#e11d48", light: "#be123c" },     // Đỏ
   "home": { dark: "#eab308", light: "#ca8a04" },           // Vàng (Quê hương)
-  "unknown": { dark: "rgba(40,40,40,0.16)", light: "rgba(200,200,200,0.24)" },
-  "default": { dark: "rgba(40,40,40,0.16)", light: "rgba(200,200,200,0.24)" },
+  "unknown": { dark: "rgba(200,200,200,0.01)", light: "rgba(200,200,200,0.01)" },
+  "default": { dark: "rgba(200,200,200,0.01)", light: "rgba(200,200,200,0.01)" },
 };
 
 type StatusCategory = "restricted" | "visa-free" | "eta" | "visa-on-arrival" | "e-visa" | "visa-required" | "home" | "unknown";
@@ -187,9 +187,8 @@ function normalizeCountryIds(fc: FeatureCollection): FeatureCollection {
 
       const overrides: Record<string, string> = {
         'France': 'FR', 'Kosovo': 'XK', 'Norway': 'NO', 
-        'Western Sahara': 'MA', 'Greenland': 'DK', 'Barbados': 'BB', 'Northern Cyprus': 'CY',
-        'Puerto Rico': 'US', 'New Caledonia': 'FR', 'Faroe Islands': 'DK',
-        'United Arab Emirates': 'AE', 'Somaliland': 'SO', 'Baykonur Cosmodrome': 'KZ'
+        'Western Sahara': 'MA', 'Barbados': 'BB', 'Northern Cyprus': 'CY',
+        'United Arab Emirates': 'AE', 'Somaliland': 'SO', 'Baykonur Cosmodrome': 'KZ', 'Greenland': 'GL'
       };
 
       if (overrides[name]) iso2 = overrides[name];
