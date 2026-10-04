@@ -26,10 +26,14 @@ function readableAccent(hex: string): string {
   return yiq >= 128 ? '#17171B' : '#FFFFFF';
 }
 
-
 const CURRENT_SCHEMA_VERSION = 1; // tăng số này mỗi khi đổi cấu trúc ICountry
 
 export class CountryService {
+  
+  /**
+   * Lấy chi tiết MỘT quốc gia theo mã ISO (2 hoặc 3 ký tự)
+   * Có cơ chế Cache: Kiểm tra MongoDB trước, nếu không có hoặc schema cũ thì gọi API
+   */
   static async getCountryByIso(isoCode: string): Promise<ICountry> {
     const code = isoCode.toUpperCase();
 
@@ -52,7 +56,6 @@ export class CountryService {
       console.log(`[MongoDB Hit]: Lấy data ${code} từ Database`);
       return existingCountry;
     }
-
 
     console.log(`[API Call]: MongoDB chưa có ${code}, tiến hành fetch từ API...`);
 
@@ -133,6 +136,7 @@ export class CountryService {
         accentSoftStrong: hexToRgba(rawAccent, 0.16),
         accentBorder: hexToRgba(rawAccent, 0.35),
       },
+      schemaVersion: CURRENT_SCHEMA_VERSION
     };
 
     // 6. Lưu data tuyệt đẹp này vào MongoDB
@@ -142,5 +146,24 @@ export class CountryService {
     console.log(`[MongoDB Save]: Đã lưu thành công ${code} vào Database`);
 
     return newCountry;
+  }
+
+  /**
+   * Lấy TẤT CẢ các quốc gia hiện có trong Database.
+   * Dùng cho trang danh sách (Discover) hoặc thanh tìm kiếm.
+   * Lưu ý: Hàm này chỉ truy xuất từ MongoDB, KHÔNG gọi API bên ngoài để fetch hàng loạt.
+   */
+  static async getAllCountries(): Promise<ICountry[]> {
+    try {
+      console.log(`[MongoDB Fetch]: Đang lấy danh sách toàn bộ quốc gia...`);
+      // Sử dụng .lean() để trả về plain JS Object thay vì Mongoose Document, giúp tăng tốc độ đáng kể
+      // Sắp xếp theo tên quốc gia (Alphabetical A-Z)
+      const countries = await Country.find({}).sort({ nameCommon: 1 }).lean();
+      
+      return countries as unknown as ICountry[];
+    } catch (error) {
+      console.error(`[CountryService Error]: Lỗi khi lấy danh sách toàn bộ quốc gia:`, error);
+      throw new Error('Failed to retrieve all countries from database');
+    }
   }
 }

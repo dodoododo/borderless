@@ -2,6 +2,27 @@ import { Request, Response } from 'express';
 import { CountryService } from '../services/country.service.js';
 
 export class CountryController {
+  // Hàm mới: Lấy danh sách tất cả quốc gia
+  static async getAllCountries(req: Request, res: Response) {
+    try {
+      const countries = await CountryService.getAllCountries();
+
+      return res.status(200).json({
+        success: true,
+        count: countries.length,
+        data: countries,
+      });
+    } catch (error: any) {
+      console.error('[CountryController Error]:', error.message);
+      
+      return res.status(500).json({
+        success: false,
+        message: 'Internal server error while fetching all countries',
+      });
+    }
+  }
+
+  // Hàm cũ: Lấy chi tiết 1 quốc gia
   static async getCountryProfile(req: Request, res: Response) {
     try {
       const { iso } = req.params;
